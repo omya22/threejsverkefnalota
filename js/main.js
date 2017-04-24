@@ -20,6 +20,8 @@ console.log("haltu kjafti")
 console.log("haltu kjafti")
 console.log("hæ ég heitir ómar")
 
+console.log("halló ég heiti Bergþóra")
+
 
 const toggleListClass = (parentDiv) => {
     let sidemenuHowtoplay = document.getElementById(parentDiv);
