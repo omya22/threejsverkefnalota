@@ -8,7 +8,7 @@ let backArrow = document.getElementById('arrow');
 
 let canvas = $(".canvasContainer").children("canvas");
 
-console.log("hallo albertgit ");
+console.log("hallo albertgith ");
 
 const toggleListClass = (parentDiv) => {
     let sidemenuHowtoplay = document.getElementById(parentDiv);
