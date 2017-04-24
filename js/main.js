@@ -63,7 +63,6 @@ aboutUsList.addEventListener("click", function() {
     aboutUsRight.className += " activeAboutus";
     setTimeout(function() {
         aboutUs.className += " active";
-        toggleListClass();
     }, 300)
 
 })
@@ -71,6 +70,7 @@ aboutUsList.addEventListener("click", function() {
 backArrow.addEventListener("click", function() {
     if (aboutUs.classList.contains("active")) {
         aboutUs.classList.remove("active");
+        console.log("about")
         setTimeout(function() {
             aboutUsLeft.style.bottom = "-100%";
             aboutUsRight.style.top= "-100%";
@@ -81,6 +81,7 @@ backArrow.addEventListener("click", function() {
             welcomeRight.style.top= "0%";
         }, 200)
     } else if (howToPlay.classList.contains("active")){
+        console.log("howto")
         howToPlayLeft.style.top = "-100%";
         howToPlayRight.style.bottom = "-100%";
         howToPlay.style.zIndex = "-1";
