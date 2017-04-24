@@ -19,7 +19,7 @@ console.log("haltu kjafti")
 console.log("haltu kjafti")
 console.log("haltu kjafti")
 console.log("hæ ég heitir ómar")
-
+console.log("hæ ég heitir Albert")
 console.log("halló ég heiti Bergþóra")
 
 
