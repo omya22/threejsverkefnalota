@@ -716,6 +716,41 @@ canvas {
     flex-direction: column;
 }
 
+.ingame-topnav ul {
+
+  margin: 0;
+  padding: 0;
+}
+
+.ingame-topnav ul li {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 30px;
+}
+
+.ingame-topnav ul li:first-child {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    margin-top: 30px;
+    padding-top: 30px;
+}
+
+.ingame-topnav ul li svg {
+    width: 26%;
+    cursor: pointer;
+}
+
+.ingame-topnav ul li svg:hover {
+    stroke: orange;
+}
+
+.ingame-topnav ul li:nth-child(3) svg {
+      width: 20%;
+}
+
 .icon2 {
     padding-top: 180px;
     display: flex;
