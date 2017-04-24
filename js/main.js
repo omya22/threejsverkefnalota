@@ -8,21 +8,6 @@ let backArrow = document.getElementById('arrow');
 
 let canvas = $(".canvasContainer").children("canvas");
 
-
-console.log("hallo albert");
-
-console.log("haltu kjafti")
-console.log("haltu kjafti")
-console.log("haltu kjafti")
-console.log("haltu kjafti")
-console.log("haltu kjafti")
-console.log("haltu kjafti")
-console.log("haltu kjafti")
-console.log("hæ ég heitir ómar")
-console.log("hæ ég heitir Albert")
-console.log("halló ég heiti Bergþóra")
-
-
 const toggleListClass = (parentDiv) => {
     let sidemenuHowtoplay = document.getElementById(parentDiv);
     console.log(sidemenuHowtoplay.childNodes)
