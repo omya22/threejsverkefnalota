@@ -8,8 +8,9 @@ let backArrow = document.getElementById('arrow');
 
 let canvas = $(".canvasContainer").children("canvas");
 
-const toggleListClass = (parentDivID) => {
-    let sidemenuHowtoplay = document.getElementById(parentDivID);
+const toggleListClass = (parentDiv) => {
+    let sidemenuHowtoplay = document.getElementById(parentDiv);
+    console.log(sidemenuHowtoplay.childNodes)
     let sidemenuList = sidemenuHowtoplay.childNodes;
     let i = 1;
     counter = 2;
@@ -59,9 +60,11 @@ aboutUsList.addEventListener("click", function() {
     aboutUsLeft.style.bottom = "0%";
     aboutUsRight.style.top= "0%";
     aboutUs.style.zIndex = "10";
-    aboutUs.className += " active";
     backArrow.style.left = "20px";
-    toggleListClass("aboutUsRight");
+    setTimeout(function() {
+        aboutUs.className += " active";
+        toggleListClass("sidemenu-howtoplay-content");
+    }, 300)
 
 })
 
@@ -76,7 +79,7 @@ backArrow.addEventListener("click", function() {
             backArrow.style.left = "-40px";
             welcomeLeft.style.bottom = "0%";
             welcomeRight.style.top= "0%";
-        }, 0)
+        }, 200)
     } else if (howToPlay.classList.contains("active")){
         howToPlayLeft.style.top = "-100%";
         howToPlayRight.style.bottom = "-100%";

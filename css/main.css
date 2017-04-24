@@ -516,6 +516,33 @@ canvas {
     top: -100%;
 }
 
+.hero-aboutus-content-text {
+    width: 80%;
+    padding-top: 100px;
+}
+
+.hero-aboutus-content-text h3 {
+    font-size: 1.3em;
+    font-weight: 900;
+}
+
+.hero-aboutus-content-text p {
+    width: 100%;
+    font-size: .75em;
+    line-height: 1.45;
+    font-weight:300;
+}
+
+.hero-aboutus-content-text ul {
+    list-style: none;
+    padding: 0;
+    padding-top: 10%;
+    font-size: .8em;
+    font-weight: 700;
+}
+
+
+
 
 /* SVG ANIMATION */
 
