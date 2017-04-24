@@ -78,11 +78,13 @@ canvas {
 
 .hero-list ul {
     list-style: none;
-    font-size: 4em;
+    font-size: 3em;
+    text-align: center;
     font-weight: 900;
     animation: move-hero-list .5s;
     animation-delay: .3s;
     margin-top: 70px;
+    padding: 0;
 }
 
 @keyframes move-hero-list {
@@ -101,7 +103,7 @@ canvas {
 .hero-list ul li:first-child {
     color: #D46F17;
     opacity: 0;
-    animation: display-hero-list-item .7s ease-in-out forwards;
+    animation: display-hero-list-item .7s .3s ease-in-out forwards;
 }
 
 .hero-list ul li:nth-child(2), .hero-list ul li:nth-child(3) {
@@ -110,18 +112,25 @@ canvas {
 
 .hero-list ul li:nth-child(2) {
     opacity: 0;
-    animation: display-hero-list-item .7s .1s ease-in-out forwards;
+    animation: display-hero-list-item .7s .5s ease-in-out forwards;
 }
 
 .hero-list ul li:nth-child(3) {
     opacity: 0;
-    animation: display-hero-list-item .7s .2s ease-in-out forwards;
+    animation: display-hero-list-item .7s .7s ease-in-out forwards;
 }
 
 .hero-list ul li:hover {
     cursor: pointer;
     transition: .5s;
     opacity: .7;
+}
+
+#welcomeRight svg {
+    height: 300px;
+    opacity: 0;
+    animation: display-hero-list-item .7s ease-in-out forwards;
+    margin-bottom: -41px;
 }
 
 @keyframes display-hero-list-item1 {
@@ -387,34 +396,57 @@ canvas {
     margin-right: 50px;
 }
 
-.hero-howtoplay-content-wrapper ul li:first-child:before {
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:first-child:before {
     background-image: url('../img/sidemenu/texture.svg');
 }
 
-.hero-howtoplay-content-wrapper ul li:nth-child(2):before {
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(2):before {
     background-image: url('../img/sidemenu/object.svg');
 }
 
-.hero-howtoplay-content-wrapper ul li:nth-child(3):before {
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(3):before {
     background-image: url('../img/sidemenu/howtoplay.svg');
     height: 90px;
 }
 
-.hero-howtoplay-content-wrapper ul li:nth-child(4):before {
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(4):before {
     background-image: url('../img/sidemenu/settings.svg');
 }
 
-.hero-howtoplay-content-wrapper ul li:nth-child(5):before {
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(5):before {
     background-image: url('../img/sidemenu/statistics.svg');
 }
 
-.hero-howtoplay-content-wrapper ul li:nth-child(6):before {
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(6):before {
     background-image: url('../img/sidemenu/timer.svg');
 }
 
-.hero-howtoplay-content-wrapper ul li {
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li {
     opacity: 0;
     margin-top: 40px
+}
+
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-keybindings li:first-child:before {
+        background-image: url('../img/sidemenu/mouseclickleft.svg');
+        width: 37px;
+        height: 64px;
+}
+
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-keybindings li:nth-child(2):before {
+        background-image: url('../img/sidemenu/erasecubes.svg');
+        width: 132px;
+}
+
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-keybindings li:nth-child(3):before {
+        background-image: url('../img/sidemenu/changeview.svg');
+        width: 205px;
+        height: 49px;
+}
+
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-keybindings li:nth-child(4):before {
+        background-image: url('../img/sidemenu/zoom.svg');
+        width: 142px;
+        height: 41px;
 }
 
 @keyframes display-list {
@@ -454,7 +486,7 @@ canvas {
 
 /* SVG CARPENTER ANIMATION */
 
-#carpenter #Sog, #carpenter #Hamar, #carpenter #Naglar {
+#carpenter1 #Sog, #carpenter1 #Hamar, #carpenter1 #Naglar {
     transform: translate(155px, 100px);
     transition: 1s;
 }
@@ -541,6 +573,10 @@ canvas {
     font-weight: 700;
 }
 
+@keyframes move-about-us-text{
+    0% {padding-top: 1000px}
+    100% {padding-top: 0px}
+}
 
 
 

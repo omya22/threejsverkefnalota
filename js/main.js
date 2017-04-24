@@ -8,9 +8,8 @@ let backArrow = document.getElementById('arrow');
 
 let canvas = $(".canvasContainer").children("canvas");
 
-const toggleListClass = (parentDiv) => {
-    let sidemenuHowtoplay = document.getElementById(parentDiv);
-    console.log(sidemenuHowtoplay.childNodes)
+const toggleListClass = () => {
+    let sidemenuHowtoplay = document.getElementById("sidemenu-howtoplay-content");
     let sidemenuList = sidemenuHowtoplay.childNodes;
     let i = 1;
     counter = 2;
@@ -36,7 +35,7 @@ play.addEventListener("click", function() {
 let howToPlay = document.getElementById('howToPlay');
 let howToPlayLeft = document.getElementById('howToPlayLeft')
 let howToPlayRight = document.getElementById('howToPlayRight')
-let carpenter = document.getElementById('carpenter');
+let carpenter = document.getElementById('carpenter1');
 
 howToPlayList.addEventListener("click", function() {
     welcomeLeft.style.bottom = "-100%";
@@ -47,7 +46,7 @@ howToPlayList.addEventListener("click", function() {
     howToPlay.className += " active"
     backArrow.style.left = "20px";
     carpenter.classList.toggle("animation-carpenter");
-    toggleListClass('sidemenu-howtoplay-content');
+    toggleListClass();
 });
 
 let aboutUs = document.getElementById('aboutUs');
@@ -61,9 +60,10 @@ aboutUsList.addEventListener("click", function() {
     aboutUsRight.style.top= "0%";
     aboutUs.style.zIndex = "10";
     backArrow.style.left = "20px";
+    aboutUsRight.className += " activeAboutus";
     setTimeout(function() {
         aboutUs.className += " active";
-        toggleListClass("sidemenu-howtoplay-content");
+        toggleListClass();
     }, 300)
 
 })
