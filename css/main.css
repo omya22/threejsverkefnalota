@@ -1,0 +1,707 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    overflow: hidden;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -5;
+    transition: .5s;
+}
+
+.back-arrow {
+    position: fixed;
+    left: -40px;
+    top: 20px;
+    z-index: 999;
+    font-size: #363D4A;
+    color: #000;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.welcome, .howToPlay, .aboutUs {
+    top: 0;
+    width: 100vw;
+    transition: 1s ease-out;
+}
+
+.hero-ad {
+    animation: banner-open .5s;
+    position: absolute;
+    left: 0;
+    bottom: 0%;
+}
+
+.hero-ad, .hero-list, .hero-howtoplay, .hero-howtoplay-content, .hero-aboutus, .hero-aboutus-content {
+    background-color: #363D4A;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: .5s;
+}
+.hero-list {
+    background-color: #fff;
+}
+
+.hero-howtoplay, .hero-aboutus {
+    background-color: #fff;
+    color: #363D4A;
+}
+
+.hero-ad h1, .howToPlay h2, .hero-aboutus h2 {
+    font-size: 6em;
+    font-weight: 900;
+    animation-delay: 3s;
+    text-transform: uppercase;
+}
+
+.hero-list {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.hero-list ul {
+    list-style: none;
+    font-size: 4em;
+    font-weight: 900;
+    animation: move-hero-list .5s;
+    animation-delay: .3s;
+    margin-top: 70px;
+}
+
+@keyframes move-hero-list {
+    from {
+        margin-top: 500px;
+    }
+    to {
+        margin-top: 70px;
+    }
+}
+
+.hero-list ul li {
+    transition: .2s;
+}
+
+.hero-list ul li:first-child {
+    color: #D46F17;
+    opacity: 0;
+    animation: display-hero-list-item .7s ease-in-out forwards;
+}
+
+.hero-list ul li:nth-child(2), .hero-list ul li:nth-child(3) {
+    color: #7A808A;
+}
+
+.hero-list ul li:nth-child(2) {
+    opacity: 0;
+    animation: display-hero-list-item .7s .1s ease-in-out forwards;
+}
+
+.hero-list ul li:nth-child(3) {
+    opacity: 0;
+    animation: display-hero-list-item .7s .2s ease-in-out forwards;
+}
+
+.hero-list ul li:hover {
+    cursor: pointer;
+    transition: .5s;
+    opacity: .7;
+}
+
+@keyframes display-hero-list-item1 {
+    0% {
+        opacity: 0
+    }
+    20% {
+        opacity: 0.2
+    }
+    40% {
+        opacity: 0.4
+    }
+    60% {
+        opacity: 0.6
+    }
+    80% {
+        opacity: 0.8
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes display-hero-list-item2 {
+    0% {
+        opacity: 0
+    }
+    20% {
+        opacity: 0
+    }
+    40% {
+        opacity: 0.4
+    }
+    60% {
+        opacity: 0.6
+    }
+    80% {
+        opacity: 0.8
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes display-hero-list-item {
+    0% {
+        opacity: 0
+    }
+    20% {
+        opacity: 0
+    }
+    40% {
+        opacity: 0
+    }
+    60% {
+        opacity: 0
+    }
+    80% {
+        opacity: 0.8
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+#logo-left use {
+    animation: changeLogo-color1 3s ease-in-out;
+}
+
+#logo-right use {
+    animation: changeLogo-color2 3s ease-in-out;
+    animation-delay: .3s;
+}
+
+#logo-top use {
+    animation: changeLogo-color3 3s ease-in-out;
+    animation-delay: .6s;
+}
+
+@keyframes changeHero-h1 {
+    0% {
+        color: #fff
+    }
+    10% {
+        color: #fff
+    }
+    50% {
+        color: #D0792C
+    }
+    80% {
+        color: #fff
+    }
+    100% {
+        color: #fff
+    }
+}
+
+@keyframes changeLogo-color1 {
+    0% {
+        fill: #fff
+    }
+    40% {
+        fill: #fff
+    }
+    50% {
+        fill: #005A9E
+    }
+    60% {
+        fill: #fff
+    }
+    100% {
+        fill: #fff
+    }
+}
+
+@keyframes changeLogo-color2 {
+    0% {
+        fill: #fff
+    }
+    40% {
+        fill: #fff
+    }
+    50% {
+        fill: #F1A100
+    }
+    60% {
+        fill: #fff
+    }
+    100% {
+        fill: #fff
+    }
+}
+
+@keyframes changeLogo-color3 {
+    0% {
+        fill: #fff
+    }
+    40% {
+        fill: #fff
+    }
+    50% {
+        fill: #DA0072
+    }
+    60% {
+        fill: #fff
+    }
+    100% {
+        fill: #fff
+    }
+}
+
+@keyframes banner-open {
+    0% {
+        width: 100%
+    }
+    80 {
+        width: 100%
+    }
+    100% {
+        width: 50%
+    }
+}
+
+
+/* HOW TO PLAY */
+
+.howToPlay, .aboutUs {
+    top: -100%;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
+
+.hero-howtoplay, .hero-howtoplay-content, .hero-aboutus, .hero-aboutus-content {
+    height: 100vh;
+    position: absolute;
+}
+
+.hero-howtoplay {
+    left: 0;
+    top: -100%;
+}
+
+.hero-howtoplay svg, .hero-aboutus svg {
+    margin-top: 15%;
+}
+
+.hero-howtoplay h2, .hero-aboutus h2 {
+    width: 30%;
+    text-align: center;
+    position: absolute;
+    top: -40px;
+    font-size: 1em;
+}
+
+.active .hero-howtoplay h2, .active .hero-aboutus h2 {
+    animation: hero-title-top .2s .6s ease-in-out forwards;
+}
+
+@keyframes hero-title-top {
+    0% {
+        top: -40px
+    }
+    40% {
+        top: 40px
+    }
+    100% {
+        top: 20px
+    }
+}
+
+.hero-howtoplay-content {
+    right: 0;
+    bottom: -100%;
+}
+
+.hero-howtoplay-content, .hero-aboutus-content {
+    height: 100vh;
+    color: #fff;
+    font-size: 2em;
+    overflow: scroll;
+}
+
+.hero-howtoplay-content p, .hero-aboutus-content p {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.hero-howtoplay-content {
+    justify-content: flex-start;
+}
+
+.hero-howtoplay-content-wrapper {
+    margin-top: 14%;
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.hero-howtoplay-content-wrapper ul {
+    margin-top: 14%;
+    list-style: none;
+    font-weight: 300;
+    margin-left: 60px;
+}
+
+.hero-howtoplay-content-wrapper ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.hero-howtoplay-content-wrapper ul li:before {
+    content: "";
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    display: block;
+    background-repeat: no-repeat;
+    margin-right: 50px;
+}
+
+.hero-howtoplay-content-wrapper ul li:first-child:before {
+    background-image: url('../img/sidemenu/texture.svg');
+}
+
+.hero-howtoplay-content-wrapper ul li:nth-child(2):before {
+    background-image: url('../img/sidemenu/object.svg');
+}
+
+.hero-howtoplay-content-wrapper ul li:nth-child(3):before {
+    background-image: url('../img/sidemenu/howtoplay.svg');
+    height: 90px;
+}
+
+.hero-howtoplay-content-wrapper ul li:nth-child(4):before {
+    background-image: url('../img/sidemenu/settings.svg');
+}
+
+.hero-howtoplay-content-wrapper ul li:nth-child(5):before {
+    background-image: url('../img/sidemenu/statistics.svg');
+}
+
+.hero-howtoplay-content-wrapper ul li:nth-child(6):before {
+    background-image: url('../img/sidemenu/timer.svg');
+}
+
+.hero-howtoplay-content-wrapper ul li {
+    opacity: 0;
+    margin-top: 40px
+}
+
+@keyframes display-list {
+    0% {
+        opacity: 0
+    }
+    0% {
+        margin-top: 1000px
+    }
+    20% {
+        opacity: 0.2
+    }
+    40% {
+        opacity: 0.4
+    }
+    50% {
+        opacity: .9
+    }
+    60% {
+        opacity: .6
+    }
+    70% {
+        opacity: 1
+    }
+    100% {
+        opacity: 1
+    }
+    100% {
+        margin-top: 0px
+    }
+}
+
+.activeList {
+    animation: display-list .1s ease-in-out forwards;
+}
+
+
+/* SVG CARPENTER ANIMATION */
+
+#carpenter #Sog, #carpenter #Hamar, #carpenter #Naglar {
+    transform: translate(155px, 100px);
+    transition: 1s;
+}
+
+.animation-carpenter #Sog {
+    animation: move-sog .4s .2s forwards;
+}
+
+.animation-carpenter #Hamar {
+    animation: move-hamar .4s .4s forwards;
+}
+
+.animation-carpenter #Naglar {
+    animation: move-naglar .4s .6s forwards;
+}
+
+@keyframes move-sog {
+    0% {
+        transform: translate(155px, 100px);
+    }
+    100% {
+        transform: translate(220px, 30px) rotate(-21deg);
+    }
+}
+
+@keyframes move-hamar {
+    0% {
+        transform: translate(155px, 100px);
+    }
+    100% {
+        transform: translate(0px, 410px);
+    }
+}
+
+@keyframes move-naglar {
+    0% {
+        transform: translate(155px, 100px);
+    }
+    100% {
+        transform: translate(350px, 500px);
+    }
+}
+
+
+/* ABOUT US */
+
+.aboutUs {
+    position: absolute;
+    top: 0%;
+}
+
+.hero-aboutus {
+    bottom: -110%;
+    left: 0%;
+}
+
+.hero-aboutus-content {
+    right: 0;
+    top: -100%;
+}
+
+
+/* SVG ANIMATION */
+
+#student-accessories #notebook {
+    transform: translate(200px, 300px);
+    transition: .2s;
+}
+
+.active #student-accessories #notebook {
+    transform: translate(390px, 64px) rotate(-43deg);
+    animation: move-stuff-notebook .3s .4s ease-in-out backwards;
+    transition: .4s;
+}
+
+#student-accessories #pencil, #student-accessories #laptop {
+    transform: translate(250px, 300px);
+    transition: .7s;
+}
+
+.active #student-accessories #pencil {
+    animation: move-stuff-pencil .3s .4s ease-in-out forwards;
+    transition: .7s;
+}
+
+.active #student-accessories #laptop {
+    transform: translate(25px, 62px) rotate(-25deg);
+    animation: move-stuff-laptop .3s .4s ease-in-out backwards;
+    transition: .7s;
+}
+
+@keyframes move-stuff-notebook {
+    0% {
+        transform: translate(200px, 300px);
+    }
+    100% {
+        transform: translate(390px, 64px) rotate(-43deg);
+    }
+}
+
+@keyframes move-stuff-pencil {
+    0% {
+        transform: translate(250px, 300px);
+    }
+    100% {
+        transform: translate(110px, 420px) rotate(-20deg);
+    }
+}
+
+@keyframes move-stuff-laptop {
+    0% {
+        transform: translate(200px, 300px);
+    }
+    100% {
+        transform: translate(25px, 62px) rotate(-25deg)
+    }
+}
+
+#student-left, #student-right {
+    transform: translate(160px, 67px);
+    transition: .7s;
+}
+
+.active #student-right {
+    animation: move-student-right .3s .3s ease-in-out forwards;
+    transition: .7s;
+}
+
+.active #student-left {
+    animation: move-student-left .3s .3s ease-in-out forwards;
+    transition: .7s;
+}
+
+@keyframes move-student-left {
+    0% {
+        transform: translate(160px, 67px);
+    }
+    100% {
+        transform: translate(0px, 54px);
+    }
+}
+
+@keyframes move-student-right {
+    0% {
+        transform: translate(160px, 67px);
+    }
+    100% {
+        transform: translate(307px, 67px);
+    }
+}
+
+
+/* INGAME STYLING */
+
+.threejs-playground {
+    display: none;
+    transition: .5s;
+}
+
+.active-ingame {
+    display:block;
+}
+
+.nav {
+    width: 290px;
+    height: 100%;
+    left: -290px;
+    position: absolute;
+    background: #414854;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    top: 0;
+}
+
+.ingame-sidemenu {
+    width: 110px;
+    height: 100%;
+    left: -110px;
+    position: absolute;
+    background-color: #363D4A;
+    z-index: -4;
+    transition: 1s;
+    box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    transition: 10s;
+}
+
+.ingame-topnav {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon2 {
+    padding-top: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon1 {
+    display: flex;
+    justify-content: center;
+}
+
+.status {
+    padding: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.timer {
+    width: 20px;
+    cursor: pointer;
+}
+
+.ingame-topnav img {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 43px;
+    padding-right: 43px;
+    opacity: 0.7;
+    border-bottom: 0.5px solid #E0E0E0;
+    cursor: pointer;
+    padding-top: 30px;
+}
+
+.ljosaperu {
+}
+
+.kassaricon {
+    opacity: 0.7;
+    border-top: 0.5px solid #E0E0E0;
+}
+
+.left {
+    left: 110px;
+    transition: 1s;
+}
+
+.active-ingame .ingame-sidemenu {
+    z-index: 999;
+    left: 0;
+    transition: 10s;
+}
