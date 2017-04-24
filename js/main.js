@@ -9,7 +9,7 @@ let backArrow = document.getElementById('arrow');
 let canvas = $(".canvasContainer").children("canvas");
 
 
-console.log("hallo albertgith ");
+console.log("hallo ");
 
 console.log("hallo albertgit ");
 console.log("hallo omar ");
