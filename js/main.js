@@ -18,6 +18,7 @@ console.log("haltu kjafti")
 console.log("haltu kjafti")
 console.log("haltu kjafti")
 console.log("haltu kjafti")
+console.log("hæ ég heitir ómar")
 
 
 const toggleListClass = (parentDiv) => {
