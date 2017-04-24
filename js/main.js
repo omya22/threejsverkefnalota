@@ -8,8 +8,8 @@ let backArrow = document.getElementById('arrow');
 
 let canvas = $(".canvasContainer").children("canvas");
 
-console.log("hallo albertgit ");
-console.log("hallo omar ");
+
+console.log("hallo ");
 
 console.log("haltu kjafti")
 console.log("haltu kjafti")
