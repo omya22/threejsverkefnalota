@@ -681,6 +681,18 @@ canvas {
     display:block;
 }
 
+.sidemenu-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidemenu-logo svg {
+    margin-top: 21px;
+    width: 60px;
+}
+
+
 .nav {
     width: 290px;
     height: 100%;
@@ -711,7 +723,6 @@ canvas {
 }
 
 .ingame-topnav {
-    padding-top: 30px;
     display: flex;
     flex-direction: column;
 }
@@ -734,7 +745,7 @@ canvas {
 
 .ingame-topnav ul li:first-child {
     border-top: 1px solid rgba(255,255,255,0.3);
-    margin-top: 30px;
+    margin-top: 10px;
     padding-top: 30px;
 }
 
@@ -744,7 +755,7 @@ canvas {
 }
 
 .ingame-topnav ul li svg:hover {
-    stroke: orange;
+    stroke: #99704F;
 }
 
 .ingame-topnav ul li:nth-child(3) svg {
@@ -802,4 +813,10 @@ canvas {
     z-index: 999;
     left: 0;
     transition: 10s;
+}
+
+/* sidebar hover effects */
+
+#sidemenu-texture g:hover {
+    stroke: orange;
 }
