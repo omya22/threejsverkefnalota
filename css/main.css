@@ -759,14 +759,24 @@ canvas {
     fill: #fff;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0065530f540c81a1f5f01ab239ad3f67a05288b2
 .ingame-topnav ul li:nth-child(3) svg path {
     fill: none;
     stroke: #fff;
 }
 
+<<<<<<< HEAD
 
 .ingame-topnav ul li:nth-child(3) svg {
       width: 20%;
+=======
+#kassahreyfari {
+  transition: .3s ease-in-out;
+>>>>>>> 0065530f540c81a1f5f01ab239ad3f67a05288b2
 }
 
 .ingame-topnav ul li svg {
@@ -777,6 +787,7 @@ canvas {
     cursor: pointer;
 }
 
+<<<<<<< HEAD
 .ingame-topnav ul li:hover svg {
     stroke: #99704F;
 }
@@ -796,6 +807,35 @@ canvas {
 
 .ingame-topnav ul li:hover {
     cursor: pointer;
+=======
+#hamarsnua{
+  transition: .3s;
+}
+
+.ingame-topnav ul li:nth-child(1) svg g rect{
+    transition: .3s ease-in-out;
+}
+
+.ingame-topnav ul li:hover svg path{
+    fill: #DC8F4B;
+
+}
+
+.ingame-topnav ul li:hover svg rect{
+    stroke: #DC8F4B;
+}
+
+.ingame-topnav ul li:nth-child(3):hover svg path{
+  fill: none;
+    stroke: #DC8F4B;
+}
+
+
+
+
+.ingame-topnav ul li:nth-child(3) svg {
+      width: 20%;
+>>>>>>> 0065530f540c81a1f5f01ab239ad3f67a05288b2
 }
 
 .icon2 {
@@ -854,4 +894,37 @@ canvas {
 
 #sidemenu-texture g:hover {
     stroke: orange;
+}
+
+
+/* Togglað div -how to- */
+.howto{
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.howto h3{
+    color: #F2994A;
+    font-weight: 200;
+    margin: 30px;
+    align-content: space-between;
+}
+
+.howto h4{
+    color: #FFFFFF;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.howto p{
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 100;
+    flex-direction: row;
+    align-self: flex-start;
+    margin-left: 30px;
+    margin-top: 26px;
+}
+#addcubeimg{
+    align-self: flex-start;
+    padding-left: 55px;
 }

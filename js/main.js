@@ -97,5 +97,25 @@ backArrow.addEventListener("click", function() {
 // INGAME JS
 
 $('.ingame-sidemenu').click(function() {
-      $('.nav').toggleClass("left");
+      $('.howto').toggleClass("left");
+});
+
+$("#texture").click(function() {
+
+
+  if (  $( '#kassahreyfari' ).attr( "x", "13.5" ) ){
+      $('#kassahreyfari').attr("x","0.5");
+  } else {
+      $('#kassahreyfari').css("x","13.5" );
+  }
+
+});
+
+$( "#hamarsnua" ).click(function() {
+
+    if (  $( '#hamarsnua' ).css( "transform" ) == 'none' ){
+        $('#hamarsnua').css("transform","rotate(-45deg)");
+    } else {
+        $('#hamarsnua').css("transform","" );
+    }
 });
