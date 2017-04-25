@@ -14,8 +14,8 @@ function init() {
   container = document.createElement( 'div' );
   container.className = "canvasContainer";
   threeJSPlayground.appendChild(container)
-  camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 1, 10000 );
-  camera.position.set( 500, 100, 1300 );
+  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
+  camera.position.set( 500, 800, 1300 );
   camera.lookAt( new THREE.Vector3() );
   scene = new THREE.Scene();
   // roll-over helpers
