@@ -97,7 +97,7 @@ backArrow.addEventListener("click", function() {
 // INGAME JS
 
 $('.ingame-sidemenu').click(function() {
-      $('.nav').toggleClass("left");
+      $('.howto').toggleClass("left");
 });
 
 $("#texture").click(function() {
