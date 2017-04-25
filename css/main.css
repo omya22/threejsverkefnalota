@@ -743,6 +743,14 @@ canvas {
       padding-bottom: 30px;
 }
 
+.ingame-topnav ul li svg:hover {
+    cursor: pointer;
+}
+
+.ingame-topnav ul li:hover {
+    cursor: pointer;
+}
+
 .ingame-topnav ul li:first-child {
     border-top: 1px solid rgba(255,255,255,0.3);
     margin-top: 10px;
@@ -753,6 +761,27 @@ canvas {
     width: 26%;
     cursor: pointer;
 }
+
+
+.ingame-topnav ul li svg path {
+    fill: #fff;
+}
+
+.ingame-topnav ul li svg path:hover {
+    fill: orange;
+}
+
+.ingame-topnav ul li:nth-child(3) svg path {
+    fill: none;
+    stroke: #fff;
+}
+
+.ingame-topnav ul li:nth-child(3) svg path:hover {
+    fill: none;
+    stroke: orange;
+}
+
+
 
 .ingame-topnav ul li svg:hover {
     stroke: #99704F;
