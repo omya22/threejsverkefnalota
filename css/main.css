@@ -767,25 +767,43 @@ canvas {
     fill: #fff;
 }
 
-.ingame-topnav ul li svg path:hover {
-    fill: orange;
-}
+
 
 .ingame-topnav ul li:nth-child(3) svg path {
     fill: none;
     stroke: #fff;
 }
 
-.ingame-topnav ul li:nth-child(3) svg path:hover {
-    fill: none;
-    stroke: orange;
+#kassahreyfari {
+  transition: .3s ease-in-out;
 }
 
 
 
-.ingame-topnav ul li svg:hover {
-    stroke: #99704F;
+#hamarsnua{
+  transition: .3s;
 }
+
+.ingame-topnav ul li:nth-child(1) svg g rect{
+    transition: .3s ease-in-out;
+}
+
+.ingame-topnav ul li:hover svg path{
+    fill: #DC8F4B;
+
+}
+
+.ingame-topnav ul li:hover svg rect{
+    stroke: #DC8F4B;
+}
+
+.ingame-topnav ul li:nth-child(3):hover svg path{
+  fill: none;
+    stroke: #DC8F4B;
+}
+
+
+
 
 .ingame-topnav ul li:nth-child(3) svg {
       width: 20%;
