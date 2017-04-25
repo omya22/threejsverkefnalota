@@ -673,6 +673,7 @@ canvas {
 /* INGAME STYLING */
 
 .threejs-playground {
+    display: none;
     transition: .5s;
 }
 
@@ -708,7 +709,7 @@ canvas {
 .ingame-sidemenu {
     width: 110px;
     height: 100%;
-    left: 0px;
+    left: -110px;
     position: absolute;
     background-color: #363D4A;
     z-index: -4;
@@ -740,7 +741,14 @@ canvas {
       margin-bottom: 30px;
       border-bottom: 1px solid rgba(255,255,255,0.3);
       padding-bottom: 30px;
-      cursor: pointer;
+}
+
+.ingame-topnav ul li svg:hover {
+    cursor: pointer;
+}
+
+.ingame-topnav ul li:hover {
+    cursor: pointer;
 }
 
 .ingame-topnav ul li:first-child {
@@ -759,55 +767,19 @@ canvas {
     fill: #fff;
 }
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 0065530f540c81a1f5f01ab239ad3f67a05288b2
 .ingame-topnav ul li:nth-child(3) svg path {
     fill: none;
     stroke: #fff;
 }
 
-<<<<<<< HEAD
-
-.ingame-topnav ul li:nth-child(3) svg {
-      width: 20%;
-=======
 #kassahreyfari {
   transition: .3s ease-in-out;
->>>>>>> 0065530f540c81a1f5f01ab239ad3f67a05288b2
 }
 
-.ingame-topnav ul li svg {
-    cursor: pointer;
-}
 
-.ingame-topnav ul li svg {
-    cursor: pointer;
-}
 
-<<<<<<< HEAD
-.ingame-topnav ul li:hover svg {
-    stroke: #99704F;
-}
-
-.ingame-topnav ul li:hover g rect {
-    stroke: orange;
-}
-
-.ingame-topnav ul li:hover svg g path {
-    fill: orange;
-}
-
-.ingame-topnav ul li:nth-child(3):hover svg path {
-    stroke: orange;
-    fill: none;
-}
-
-.ingame-topnav ul li:hover {
-    cursor: pointer;
-=======
 #hamarsnua{
   transition: .3s;
 }
@@ -835,10 +807,10 @@ canvas {
 
 .ingame-topnav ul li:nth-child(3) svg {
       width: 20%;
->>>>>>> 0065530f540c81a1f5f01ab239ad3f67a05288b2
 }
 
 .icon2 {
+    padding-top: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
