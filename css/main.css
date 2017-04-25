@@ -778,7 +778,9 @@ canvas {
   transition: .3s ease-in-out;
 }
 
-
+#settingssnu{
+    transition: .3s;
+}
 
 #hamarsnua{
   transition: .3s;
