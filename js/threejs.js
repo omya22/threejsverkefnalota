@@ -29,13 +29,12 @@ $(window).scroll(function() {
 
   document.addEventListener("keydown", function(e) {
       if (e.keyCode == 16) {
-
           document.onmousemove = function(e){
                 cursorX = e.pageX;
                 cursorY = e.pageY;
                 console.log(cursorY*2 + '<-- Y | X -->' + cursorX)
                 camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
-                camera.position.set( cursorX, cursorY, 14 );
+                camera.position.set( 3000, (cursorY), 14 );
                 camera.lookAt( new THREE.Vector3() );
         }
       }

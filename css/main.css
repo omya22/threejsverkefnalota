@@ -702,7 +702,7 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 1s;
+    transition: .4s ease-in;
     top: 0;
 }
 
@@ -853,7 +853,7 @@ canvas {
 
 .left {
     left: 110px;
-    transition: 1s;
+    transition: .4s ease-in;
 }
 
 .active-ingame .ingame-sidemenu {
