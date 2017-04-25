@@ -103,10 +103,10 @@ $('.ingame-sidemenu').click(function() {
 $("#texture").click(function() {
 
 
-  if (  $( '#kassahreyfari' ).attr( "x", "13.5" ) ){
+  if (  $( '#kassahreyfari' ).attr( "x" ) == '13.5' ){
       $('#kassahreyfari').attr("x","0.5");
   } else {
-      $('#kassahreyfari').css("x","13.5" );
+      $('#kassahreyfari').attr("x","13.5" );
   }
 
 });
@@ -117,5 +117,17 @@ $( "#hamarsnua" ).click(function() {
         $('#hamarsnua').css("transform","rotate(-45deg)");
     } else {
         $('#hamarsnua').css("transform","" );
+    }
+});
+
+
+$( "#settingssnu" ).click(function() {
+
+
+
+    if (  $( '#settingssnu' ).css( "transform" ) == 'none' ){
+        $('#settingssnu').css("transform","rotate(-45deg)");
+    } else {
+        $('#settingssnu').css("transform","" );
     }
 });
