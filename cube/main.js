@@ -15,7 +15,7 @@ picker.enter();
 
   $('.nav1').click(function() {
 
-  $('.nav').toggleClass("left");
+  $('.navcubes').toggleClass("left");
 });
 
 var container;
