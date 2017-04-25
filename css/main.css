@@ -103,7 +103,7 @@ canvas {
 .hero-list ul li:first-child {
     color: #D46F17;
     opacity: 0;
-    animation: display-hero-list-item .7s .3s ease-in-out forwards;
+    animation: display-hero-list-item .5s .2s ease-in-out forwards;
 }
 
 .hero-list ul li:nth-child(2), .hero-list ul li:nth-child(3) {
@@ -112,12 +112,12 @@ canvas {
 
 .hero-list ul li:nth-child(2) {
     opacity: 0;
-    animation: display-hero-list-item .7s .5s ease-in-out forwards;
+    animation: display-hero-list-item .5s .3s ease-in-out forwards;
 }
 
 .hero-list ul li:nth-child(3) {
     opacity: 0;
-    animation: display-hero-list-item .7s .7s ease-in-out forwards;
+    animation: display-hero-list-item .5s .4s ease-in-out forwards;
 }
 
 .hero-list ul li:hover {
