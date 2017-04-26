@@ -743,6 +743,14 @@ canvas {
       padding-bottom: 30px;
 }
 
+.ingame-topnav ul li svg:hover {
+    cursor: pointer;
+}
+
+.ingame-topnav ul li:hover {
+    cursor: pointer;
+}
+
 .ingame-topnav ul li:first-child {
     border-top: 1px solid rgba(255,255,255,0.3);
     margin-top: 10px;
@@ -754,9 +762,48 @@ canvas {
     cursor: pointer;
 }
 
-.ingame-topnav ul li svg:hover {
-    stroke: #99704F;
+
+.ingame-topnav ul li svg path {
+    fill: #fff;
 }
+
+
+
+.ingame-topnav ul li:nth-child(3) svg path {
+    fill: none;
+    stroke: #fff;
+}
+
+#kassahreyfari {
+  transition: .3s ease-in-out;
+}
+
+
+
+#hamarsnua{
+  transition: .3s;
+}
+
+.ingame-topnav ul li:nth-child(1) svg g rect{
+    transition: .3s ease-in-out;
+}
+
+.ingame-topnav ul li:hover svg path{
+    fill: #DC8F4B;
+
+}
+
+.ingame-topnav ul li:hover svg rect{
+    stroke: #DC8F4B;
+}
+
+.ingame-topnav ul li:nth-child(3):hover svg path{
+  fill: none;
+    stroke: #DC8F4B;
+}
+
+
+
 
 .ingame-topnav ul li:nth-child(3) svg {
       width: 20%;
@@ -820,17 +867,17 @@ canvas {
 #sidemenu-texture g:hover {
     stroke: orange;
 }
-
-
-/* Togglað div -how to- */
-.howto{
+/*Togglað div -addtexture-*/
+/* Togglað div -howto- */
+.howto, .addtexture{
     flex-direction: column;
     justify-content: flex-start;
 }
 
-.howto h3{
+.howto h3, .addtexture h3{
     color: #F2994A;
     font-weight: 200;
+    letter-spacing: 1px;
     margin: 30px;
     align-content: space-between;
 }
@@ -852,4 +899,47 @@ canvas {
 #addcubeimg{
     align-self: flex-start;
     padding-left: 55px;
+}
+.howto .keyb{
+    flex-direction: row;
+    width: 180px;
+}
+.howto .keys{
+    padding: 0px 15px 0px 0px;
+}
+.addtexture h4{
+    color: #F2994A;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+.texturizedcubes{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.texturizedcubes ul{
+    list-style: none;
+    padding: 0px;
+}
+.texturizedcubes ul li{
+    height: 102px;
+    width: 91px;
+    background-repeat: no-repeat;
+    margin: 30px 0px;
+}
+.texturizedcubes ul li:nth-child(1){
+    background-image: url('../img/glasscube.svg');
+    
+}
+.texturizedcubes ul li:nth-child(2){
+    background-image: url('../img/grasscube.svg');
+    
+}
+.texturizedcubes ul li:nth-child(3){
+    background-image: url('../img/woodprufa2.svg');
+    
+}
+.texturizedcubes ul li:nth-child(4){
+    background-image: url('../img/brick4.svg');
+    
 }

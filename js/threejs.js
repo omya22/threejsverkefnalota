@@ -14,9 +14,32 @@ function init() {
   container = document.createElement( 'div' );
   container.className = "canvasContainer";
   threeJSPlayground.appendChild(container)
-  camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 1, 10000 );
-  camera.position.set( 500, 100, 1300 );
+  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
+  camera.position.set( 3000, 800, 300 );
   camera.lookAt( new THREE.Vector3() );
+  let cursorX
+  let cursorY
+
+
+$(window).scroll(function() {
+    let zoomer = 1;
+    zoomer++;
+    console.log(zoomer);
+});
+
+  document.addEventListener("keydown", function(e) {
+      if (e.keyCode == 16) {
+
+          document.onmousemove = function(e){
+                cursorX = e.pageX;
+                cursorY = e.pageY;
+                console.log(cursorY*2 + '<-- Y | X -->' + cursorX)
+                camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
+                camera.position.set( cursorX, cursorY, 14 );
+                camera.lookAt( new THREE.Vector3() );
+        }
+      }
+  });
   scene = new THREE.Scene();
   // roll-over helpers
   rollOverGeo = new THREE.BoxGeometry( 50, 50, 50 );
