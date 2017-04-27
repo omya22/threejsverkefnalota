@@ -101,6 +101,11 @@ $('.ingame-sidemenu').click(function() {
 });
 
 $("#texture").click(function() {
+  $("#Textureinner").toggleClass('Tactive');
+  $("#Hamar-icon").removeClass('TactiveF');
+  $("#ljosaperainner").removeClass('TactiveL');
+    $("#Settingsinner").removeClass('TactiveS');
+
 
 
   if (  $( '#kassahreyfari' ).attr( "x" ) == '13.5' ){
@@ -111,7 +116,16 @@ $("#texture").click(function() {
 
 });
 
+function activeRemover() {
+  $("#Textureinner").removeClass('Tactive');
+}
 $( "#hamarsnua" ).click(function() {
+
+    $("#Hamar-icon").toggleClass('TactiveF');
+    $("#Textureinner").removeClass('Tactive');
+    $("#ljosaperainner").removeClass('TactiveL');
+      $("#Settingsinner").removeClass('TactiveS');
+      $('#kassahreyfari').attr("x","13.5" );
 
     if (  $( '#hamarsnua' ).css( "transform" ) == 'none' ){
         $('#hamarsnua').css("transform","rotate(-45deg)");
@@ -120,8 +134,28 @@ $( "#hamarsnua" ).click(function() {
     }
 });
 
+$( "#LightbulbT" ).click(function() {
+  $("#ljosaperainner").toggleClass('TactiveL');
+
+  $("#Hamar-icon").removeClass('TactiveF');
+  $("#Textureinner").removeClass('Tactive');
+    $("#Settingsinner").removeClass('TactiveS');
+
+    if (  $( '#LightbulbT' ).css( "transform" ) == 'none' ){
+        $('#LightbulbT').css("transform","rotate(-45deg)");
+    } else {
+        $('#LightbulbT').css("transform","" );
+    }
+});
+
+
 
 $( "#settingssnu" ).click(function() {
+
+  $("#Settingsinner").toggleClass('TactiveS');
+  $("#ljosaperainner").removeClass('TactiveL');
+  $("#Hamar-icon").removeClass('TactiveF');
+  $("#Textureinner").removeClass('Tactive');
 
 
 
