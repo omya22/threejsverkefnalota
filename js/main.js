@@ -95,9 +95,9 @@ backArrow.addEventListener("click", function() {
 });
 
 // INGAME JS
-
+//Búa til IF-- then hér..
 $('.ingame-sidemenu').click(function() {
-      $('.howto').toggleClass("left");
+      $('.addtexture').toggleClass("left");
 });
 
 $("#texture").click(function() {
@@ -134,6 +134,7 @@ $( "#hamarsnua" ).click(function() {
     }
 });
 
+
 $( "#LightbulbT" ).click(function() {
   $("#ljosaperainner").toggleClass('TactiveL');
 
@@ -156,6 +157,11 @@ $( "#settingssnu" ).click(function() {
   $("#ljosaperainner").removeClass('TactiveL');
   $("#Hamar-icon").removeClass('TactiveF');
   $("#Textureinner").removeClass('Tactive');
+
+
+
+
+
 
 
 

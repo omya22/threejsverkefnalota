@@ -889,17 +889,17 @@ height: 50px;
 #sidemenu-texture g:hover {
     stroke: orange;
 }
-
-
-/* Togglað div -how to- */
-.howto{
+/*Togglað div -addtexture-*/
+/* Togglað div -howto- */
+.howto, .addtexture{
     flex-direction: column;
     justify-content: flex-start;
 }
 
-.howto h3{
+.howto h3, .addtexture h3{
     color: #F2994A;
     font-weight: 200;
+    letter-spacing: 1px;
     margin: 30px;
     align-content: space-between;
 }
@@ -921,4 +921,47 @@ height: 50px;
 #addcubeimg{
     align-self: flex-start;
     padding-left: 55px;
+}
+.howto .keyb{
+    flex-direction: row;
+    width: 180px;
+}
+.howto .keys{
+    padding: 0px 15px 0px 0px;
+}
+.addtexture h4{
+    color: #F2994A;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+.texturizedcubes{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.texturizedcubes ul{
+    list-style: none;
+    padding: 0px;
+}
+.texturizedcubes ul li{
+    height: 102px;
+    width: 91px;
+    background-repeat: no-repeat;
+    margin: 30px 0px;
+}
+.texturizedcubes ul li:nth-child(1){
+    background-image: url('../img/glasscube.svg');
+    
+}
+.texturizedcubes ul li:nth-child(2){
+    background-image: url('../img/grasscube.svg');
+    
+}
+.texturizedcubes ul li:nth-child(3){
+    background-image: url('../img/woodprufa2.svg');
+    
+}
+.texturizedcubes ul li:nth-child(4){
+    background-image: url('../img/brick4.svg');
+    
 }
