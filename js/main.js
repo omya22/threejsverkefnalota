@@ -29,7 +29,6 @@ const toggleListClass = () => {
 play.addEventListener("click", function() {
     welcomeLeft.style.left = "-100%";
     welcomeRight.style.right = "-100%";
-    threeJSPlayground.classList.toggle("active-ingame");
 });
 
 let howToPlay = document.getElementById('howToPlay');
