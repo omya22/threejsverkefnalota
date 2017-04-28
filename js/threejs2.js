@@ -169,7 +169,7 @@ function onDocumentMouseDown(event) {
             }
             // create cube
         } else {
-            var voxel = new THREE.Mesh(cubeGeo, cubeMaterial);
+            var voxel = new THREE.Mesh(cubeGeo, cubeMaterial.clone());
             voxel.position.copy(intersect.point).add(intersect.face.normal);
             voxel.position.divideScalar(50).floor().multiplyScalar(50).addScalar(25);
             scene.add(voxel);
@@ -197,17 +197,23 @@ function onDocumentKeyUp(event) {
 window.addEventListener("keydown", function(event) {
     if (event.keyCode == 16) {
         controls.enabled = true;
-        document.body.style.cursor = "pointer";
+        document.body.style.cursor = "move";
         rollOverMesh.material.opacity = "0";
+    }
 
+	if (event.keyCode == 17) {
+        rollOverMesh.material.opacity = "0";
     }
 });
 
 window.addEventListener("keyup", function(event) {
     if (event.keyCode == 16) {
         controls.enabled = false;
-        document.body.style.cursor = "auto";
+        document.body.style.cursor = "none";
         rollOverMesh.material.opacity = "0.5";
+    }
+	if (event.keyCode == 17) {
+        rollOverMesh.material.opacity = ".5";
     }
 });
 
@@ -224,9 +230,3 @@ function render() {
 
     renderer.render(scene, camera);
 }
-
-changeColor.addEventListener("click", function() {
-    cubeMaterial.color.setHex(0x000000);
-	console.log(objects)
-	render();
-})

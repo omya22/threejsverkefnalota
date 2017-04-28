@@ -99,15 +99,45 @@ backArrow.addEventListener("click", function() {
 
 // INGAME JS
 //Búa til IF-- then hér..
-$('.ingame-sidemenu').click(function() {
-      $('.addtexture').toggleClass("left");
-});
+
+var picker = new CP(document.querySelector('input[type="text"]'));
+
+
+
+  picker.on("change", function(color) {
+      this.target.value = '0x' + color;
+      cubeMaterial.color.setHex(($(".colorpikk").val()));
+
+      this.target.value = '#' + color;
+
+      $(".kassilitur").css("fill", "#" + color);
+      $(".kassilitur1").css("opacity", ".9");
+      $(".kassilitur2").css("opacity", ".95");
+      $(".kassilitur3").css("opacity", "1");
+
+  });
+
+
+        // $('.colorpikk').spectrum({
+     //  		color: '#000',
+     //  		showAlpha: true,showInput: true,
+        //
+     //  		move: function(color){
+     //  			$('Fill-1').css('fill',color.toRgbString());
+        //
+        //
+     //  		}
+        //
+     //  	});
+
 
 $("#texture").click(function() {
   $("#Textureinner").toggleClass('Tactive');
   $("#Hamar-icon").removeClass('TactiveF');
   $("#ljosaperainner").removeClass('TactiveL');
     $("#Settingsinner").removeClass('TactiveS');
+    $('.addtexture').toggleClass("left");
+
 
 
 
@@ -129,6 +159,7 @@ $( "#hamarsnua" ).click(function() {
     $("#ljosaperainner").removeClass('TactiveL');
       $("#Settingsinner").removeClass('TactiveS');
       $('#kassahreyfari').attr("x","13.5" );
+      $('.addtexture').toggleClass("left");
 
     if (  $( '#hamarsnua' ).css( "transform" ) == 'none' ){
         $('#hamarsnua').css("transform","rotate(-45deg)");
@@ -138,12 +169,15 @@ $( "#hamarsnua" ).click(function() {
 });
 
 
-$( "#LightbulbT" ).click(function() {
+$( "#Lightbulb" ).click(function() {
   $("#ljosaperainner").toggleClass('TactiveL');
 
   $("#Hamar-icon").removeClass('TactiveF');
   $("#Textureinner").removeClass('Tactive');
     $("#Settingsinner").removeClass('TactiveS');
+    $('.addtexture').toggleClass("left");
+    $(".howto").toggleClass('left');
+
 
     if (  $( '#LightbulbT' ).css( "transform" ) == 'none' ){
         $('#LightbulbT').css("transform","rotate(-45deg)");
@@ -174,3 +208,22 @@ $( "#settingssnu" ).click(function() {
         $('#settingssnu').css("transform","" );
     }
 });
+
+$( ".skiptaumlit" ).click(function(){
+  $(".skiptaumlit").css('height', "256px");
+});
+
+$(".sidemenuLi").click(function() {
+    $(this).toggleClass("active");
+    if ($(this).hasClass("texture")) {
+
+    } else if ($(this).hasClass("hamar")) {
+        console.log("hamar")
+    } else if ($(this).hasClass("Lightbulb")) {
+        console.log("ljos")
+    } else if ($(this).hasClass("settings")) {
+        console.log("settings")
+    }
+})
+
+console.log();

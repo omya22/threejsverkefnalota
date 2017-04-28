@@ -7,17 +7,13 @@
     <meta name="og:title" content="BUILDR | Build everything you´ve ever wanted.">
     <link rel="icon" sizes="16x16" href="https://images.vexels.com/media/users/3/137615/isolated/preview/5af2a9cbd8cd93aa90889fbc05656cb5-geometric-abstract-logo-cube-by-vexels.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+
+     <link href="css/color-picker.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/threejs.css">
 </head>
 
 <body>
-
-    <div class="test-inputtttt" style="position:fixed; left: 5%; top: 5%; z-index: 15">
-        <input style="" style="position:relative;" type="text" name="" id="hexColorrrr" placeholder="Breyta lit!"/>
-        <button type="button" name="button" id="colorChangerrrr">Breyta lit!</button>
-    </div>
-
     <section class="buildr-intro-section">
         <div class="back-arrow" id="arrow">
             <svg width="18px" height="55px" viewBox="309 -394 162 125" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -391,7 +387,7 @@
             <div class="ingame-topnav">
 
                 <ul>
-                    <li>
+                    <li class="sidemenuLi texture">
                         <svg class="sidemenu-hover" id="texture" width="50px" height="50px" viewBox="0 0 25 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
                             <desc>Created with Sketch.</desc>
@@ -407,7 +403,7 @@
                             </g>
                         </svg>
                     </li>
-                    <li>
+                    <li class="sidemenuLi hamar">
                         <svg class="sidemenu-hover" id="hamarsnua" width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
                             <desc>Created with Sketch.</desc>
@@ -420,20 +416,20 @@
                         </svg>
                     </li>
 
-                    <li>
-                        <svg class="sidemenu-hover"  width="39px" height="61px" viewBox="0 0 39 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <li class="sidemenuLi Lightbulb">
+                        <svg class="sidemenu-hover" id="Lightbulb" width="39px" height="61px" viewBox="0 0 39 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
                             <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
                             <desc>Created with Sketch.</desc>
                             <defs></defs>
                             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-                                <g id="Lightbulb" transform="translate(1.000000, 2.000000)" stroke="#FFFFFF" stroke-width="3">
+                                <g transform="translate(1.000000, 2.000000)" stroke="#FFFFFF" stroke-width="3">
                                     <path d="M9.797,50.137 L27.029,50.137 L9.797,50.137 Z M9.797,57.043 L27.029,57.043 L9.797,57.043 Z M19.389,0.106 C19.069,0.089 18.744,0.078 18.417,0.078 C18.417,0.078 17.785,0.085 17.497,0.101 C8.143,0.58 0.707,8.312 0.707,17.786 C0.707,22.929 3.72,27.807 7.247,31.521 C7.908,32.145 8.789,33.116 9.244,34.216 C9.67,35.245 9.779,36.57 9.774,38.044 L9.774,39.44 L9.774,43.229 L13.563,43.229 L18.367,43.229 L18.417,43.229 L23.225,43.229 L27.009,43.229 L27.009,39.441 L27.009,38.045 C27.002,36.57 27.116,35.246 27.541,34.217 C27.997,33.114 28.876,32.145 29.538,31.521 C33.064,27.807 36.077,22.927 36.077,17.786 C36.077,8.345 28.695,0.638 19.389,0.106 Z" id="ljosaperainner"></path>
                                 </g>
                             </g>
                         </svg>
                     </li>
-                    <li>
+                    <li class="sidemenuLi settings">
                         <svg class="sidemenu-hover" id="settingssnu" width="90px" height="90px" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
                             <desc>Created with Sketch.</desc>
@@ -477,19 +473,22 @@
         </div>
         <div class="nav addtexture">
             <h3>Customize cube</h3>
-                <svg width="91px" height="102px" viewBox="0 0 91 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg class="kassilitur"width="91px" height="102px" viewBox="0 0 91 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
                     <desc>Created with Sketch.</desc>
                     <defs></defs>
                     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <g>
-                            <polygon id="Fill-1" fill="#219653" points="0 79.1362 45.5 101.9982 45.5 45.7222 0 22.8602"></polygon>
-                            <polygon id="Fill-2" fill="#27AE60" points="45.5004 45.7219 45.5004 101.9979 91.0004 79.1359 91.0004 22.8599"></polygon>
-                            <polygon id="Fill-3" fill="#6FCF97" points="43.7499 0.0001 -0.0001 22.8621 45.4999 45.7251 90.9999 22.8621"></polygon>
+                            <polygon class="kassilitur kassilitur1" id="Fill-1" fill="#219653" points="0 79.1362 45.5 101.9982 45.5 45.7222 0 22.8602"></polygon>
+                            <polygon class="kassilitur kassilitur2" id="Fill-2" fill="#27AE60" points="45.5004 45.7219 45.5004 101.9979 91.0004 79.1359 91.0004 22.8599"></polygon>
+                            <polygon class="kassilitur kassilitur3" id="Fill-3" fill="#6FCF97" points="43.7499 0.0001 -0.0001 22.8621 45.4999 45.7251 90.9999 22.8621"></polygon>
                         </g>
                     </g>
                 </svg>
-            <input type="text" value="#fff" />
+                <div class="skiptaumlit">
+                    <input  class="colorpikk"type="text" value="#fff" />
+                </div>
+
             <div class="texturizedcubes">
                  <h4>Textures</h4>
                     <ul>
@@ -529,9 +528,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
-    <script src="color-picker.min.js"></script>
-    <script type="text/javascript" src="js/globalize.min.js"></script>
+    <script src="js/color-picker.min.js"></script>
     <script type="text/javascript" src="js/orbitcontrols.js"></script>
+    <script type="text/javascript" src="js/globalize.min.js"></script>
     <script type="text/javascript" src="js/threejs2.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
