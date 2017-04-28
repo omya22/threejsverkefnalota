@@ -46,6 +46,7 @@
 
 
                 element = renderer.domElement;
+				element.id = 'ourCanvas';
                 container.appendChild(element);
 
                 element.addEventListener("scroll", function(){
@@ -159,7 +160,7 @@
 						objects.push( voxel );
 					}
 				}
-			}            
+			}
 			function onDocumentKeyDown( event ) {
 				switch( event.keyCode ) {
 					case 17: isCTRLDown = true; break;

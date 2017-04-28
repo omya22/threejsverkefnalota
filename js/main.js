@@ -6,7 +6,7 @@ let welcomeLeft = document.getElementById('welcomeLeft');
 let welcomeRight = document.getElementById('welcomeRight');
 let backArrow = document.getElementById('arrow');
 
-let canvas = $(".canvasContainer").children("canvas");
+let canvas = document.getElementById('ourCanvas')
 
 const toggleListClass = () => {
     let sidemenuHowtoplay = document.getElementById("sidemenu-howtoplay-content");
@@ -29,6 +29,7 @@ const toggleListClass = () => {
 play.addEventListener("click", function() {
     welcomeLeft.style.left = "-100%";
     welcomeRight.style.right = "-100%";
+    canvas.style.zIndex = "5";
 });
 
 let howToPlay = document.getElementById('howToPlay');
@@ -94,12 +95,17 @@ backArrow.addEventListener("click", function() {
 });
 
 // INGAME JS
-
+//Búa til IF-- then hér..
 $('.ingame-sidemenu').click(function() {
-      $('.howto').toggleClass("left");
+      $('.addtexture').toggleClass("left");
 });
 
 $("#texture").click(function() {
+  $("#Textureinner").toggleClass('Tactive');
+  $("#Hamar-icon").removeClass('TactiveF');
+  $("#ljosaperainner").removeClass('TactiveL');
+    $("#Settingsinner").removeClass('TactiveS');
+
 
 
   if (  $( '#kassahreyfari' ).attr( "x" ) == '13.5' ){
@@ -110,7 +116,16 @@ $("#texture").click(function() {
 
 });
 
+function activeRemover() {
+  $("#Textureinner").removeClass('Tactive');
+}
 $( "#hamarsnua" ).click(function() {
+
+    $("#Hamar-icon").toggleClass('TactiveF');
+    $("#Textureinner").removeClass('Tactive');
+    $("#ljosaperainner").removeClass('TactiveL');
+      $("#Settingsinner").removeClass('TactiveS');
+      $('#kassahreyfari').attr("x","13.5" );
 
     if (  $( '#hamarsnua' ).css( "transform" ) == 'none' ){
         $('#hamarsnua').css("transform","rotate(-45deg)");
@@ -120,7 +135,33 @@ $( "#hamarsnua" ).click(function() {
 });
 
 
+$( "#LightbulbT" ).click(function() {
+  $("#ljosaperainner").toggleClass('TactiveL');
+
+  $("#Hamar-icon").removeClass('TactiveF');
+  $("#Textureinner").removeClass('Tactive');
+    $("#Settingsinner").removeClass('TactiveS');
+
+    if (  $( '#LightbulbT' ).css( "transform" ) == 'none' ){
+        $('#LightbulbT').css("transform","rotate(-45deg)");
+    } else {
+        $('#LightbulbT').css("transform","" );
+    }
+});
+
+
+
 $( "#settingssnu" ).click(function() {
+
+  $("#Settingsinner").toggleClass('TactiveS');
+  $("#ljosaperainner").removeClass('TactiveL');
+  $("#Hamar-icon").removeClass('TactiveF');
+  $("#Textureinner").removeClass('Tactive');
+
+
+
+
+
 
 
 
