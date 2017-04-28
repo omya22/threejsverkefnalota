@@ -1,6 +1,8 @@
 
 
-
+document.addEventListener("click", function(e) {
+    console.log(e.target);
+})
 
 
 
@@ -49,7 +51,7 @@ function init() {
   scene.add( rollOverMesh );
   // cubes
   cubeGeo = new THREE.BoxGeometry( 50, 50, 50 );
-  cubeMaterial = new THREE.MeshLambertMaterial( { color: 0xfeb74c, map: new THREE.TextureLoader().load("kalli1.jpg") } );
+  cubeMaterial = new THREE.MeshLambertMaterial( { color: 0xffffff, map: new THREE.TextureLoader().load("kalli1.jpg") } );
   // grid
   var size = 5000, step = 50;
   var geometry = new THREE.Geometry();

@@ -685,7 +685,6 @@ canvas {
     display: flex;
     align-items: center;
     justify-content: center;
-        margin: 17px;
 }
 
 .sidemenu-logo svg {
@@ -703,7 +702,7 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 1s;
+    transition: .4s ease-in;
     top: 0;
 }
 
@@ -761,18 +760,19 @@ canvas {
 .ingame-topnav ul li svg {
     width: 26%;
     cursor: pointer;
-    height: 30px;
 }
 
 
-
+.ingame-topnav ul li svg path {
+    fill: #fff;
+}
 
 
 
 .ingame-topnav ul li:nth-child(3) svg path {
     fill: none;
+    stroke: #fff;
 }
-
 
 #kassahreyfari {
   transition: .3s ease-in-out;
@@ -792,21 +792,7 @@ canvas {
 
 .ingame-topnav ul li:hover svg path{
     fill: #DC8F4B;
-}
 
-.Tactive rect{
-    stroke: #DC8F4B;
-}
-
-.TactiveF{
-    fill: #DC8F4B;
-}
-.TactiveL{
-    stroke: #DC8F4B;
-}
-
-.TactiveS{
-    fill: #DC8F4B;
 }
 
 .ingame-topnav ul li:hover svg rect{
@@ -825,13 +811,12 @@ canvas {
       width: 20%;
 }
 
-
-
 .icon2 {
-
+    padding-top: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
+<<<<<<< HEAD
     justify-content: flex-end;
 height: 100%;
 }
@@ -839,20 +824,25 @@ height: 100%;
   padding-left: 0px;
   list-style: none;
 
+=======
+>>>>>>> 9d9750de7bcb4643192ff9a20682a5d05d6ab2e2
 }
-
-.icon2 ul li{
-  width: 26px;
-height: 50px;
-}
-
 
 .icon1 {
     display: flex;
     justify-content: center;
 }
 
+.status {
+    padding: 20px;
+    width: 20px;
+    cursor: pointer;
+}
 
+.timer {
+    width: 20px;
+    cursor: pointer;
+}
 
 .ingame-topnav img {
     padding-top: 30px;
@@ -875,7 +865,7 @@ height: 50px;
 
 .left {
     left: 110px;
-    transition: 1s;
+    transition: .4s ease-in;
 }
 
 .active-ingame .ingame-sidemenu {
@@ -933,17 +923,17 @@ align-items: center;
 #sidemenu-texture g:hover {
     stroke: orange;
 }
-/*Togglað div -addtexture-*/
-/* Togglað div -howto- */
-.howto, .addtexture{
+
+
+/* Togglað div -how to- */
+.howto{
     flex-direction: column;
     justify-content: flex-start;
 }
 
-.howto h3, .addtexture h3{
+.howto h3{
     color: #F2994A;
     font-weight: 200;
-    letter-spacing: 1px;
     margin: 30px;
     align-content: space-between;
 }
@@ -966,6 +956,7 @@ align-items: center;
     align-self: flex-start;
     padding-left: 55px;
 }
+<<<<<<< HEAD
 .howto .keyb{
     flex-direction: row;
     width: 180px;
@@ -1009,3 +1000,5 @@ align-items: center;
     background-image: url('../img/brick4.svg');
 
 }
+=======
+>>>>>>> 9d9750de7bcb4643192ff9a20682a5d05d6ab2e2

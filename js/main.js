@@ -110,7 +110,7 @@ var picker = new CP(document.querySelector('input[type="text"]'));
 
         $('.colorpikk').spectrum({
       		color: '#000',
-      		showAlpha: true,showInput: true,
+      		showAlpha: true,show<t: true,
 
       		move: function(color){
       			$('Fill-1').css('fill',color.toRgbString());
