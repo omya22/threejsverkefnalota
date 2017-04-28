@@ -838,7 +838,7 @@ height: 100%;
 .icon2 ul{
   padding-left: 0px;
   list-style: none;
-  
+
 }
 
 .icon2 ul li{
@@ -883,6 +883,50 @@ height: 50px;
     left: 0;
     transition: 10s;
 }
+
+
+/*color picker*/
+
+.kassilitur{
+  margin-bottom: 20px;
+}
+
+.colorpikk{
+
+background-color: transparent;
+    color: #fff;
+    border-radius: 0%;
+    BORDER: solid #fff 1px;
+    padding: 4px;
+    width: 90px;
+    text-align: center;
+    border-radius: 13%;
+    transition: 1s;
+
+
+}
+.color-picker{
+  height: 222px;
+left: 180px !important;
+width: 180px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.color-picker-control{
+
+
+      box-shadow: none;
+      border: none;
+      padding-bottom: 43px;
+
+}
+.color-picker-h{
+  margin-left: 10px;
+}
+
 
 /* sidebar hover effects */
 
@@ -951,17 +995,17 @@ height: 50px;
 }
 .texturizedcubes ul li:nth-child(1){
     background-image: url('../img/glasscube.svg');
-    
+
 }
 .texturizedcubes ul li:nth-child(2){
     background-image: url('../img/grasscube.svg');
-    
+
 }
 .texturizedcubes ul li:nth-child(3){
     background-image: url('../img/woodprufa2.svg');
-    
+
 }
 .texturizedcubes ul li:nth-child(4){
     background-image: url('../img/brick4.svg');
-    
+
 }

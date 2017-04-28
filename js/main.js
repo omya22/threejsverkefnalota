@@ -96,15 +96,38 @@ backArrow.addEventListener("click", function() {
 
 // INGAME JS
 //Búa til IF-- then hér..
-$('.ingame-sidemenu').click(function() {
-      $('.addtexture').toggleClass("left");
-});
+
+var picker = new CP(document.querySelector('input[type="text"]'));
+
+
+
+  picker.on("change", function(color) {
+      this.target.value = '#' + color;
+
+
+  });
+
+
+        $('.colorpikk').spectrum({
+      		color: '#000',
+      		showAlpha: true,showInput: true,
+
+      		move: function(color){
+      			$('Fill-1').css('fill',color.toRgbString());
+
+
+      		}
+
+      	});
+
 
 $("#texture").click(function() {
   $("#Textureinner").toggleClass('Tactive');
   $("#Hamar-icon").removeClass('TactiveF');
   $("#ljosaperainner").removeClass('TactiveL');
     $("#Settingsinner").removeClass('TactiveS');
+    $('.addtexture').toggleClass("left");
+
 
 
 
@@ -127,6 +150,8 @@ $( "#hamarsnua" ).click(function() {
       $("#Settingsinner").removeClass('TactiveS');
       $('#kassahreyfari').attr("x","13.5" );
 
+            $(".howto").toggleClass('left');
+
     if (  $( '#hamarsnua' ).css( "transform" ) == 'none' ){
         $('#hamarsnua').css("transform","rotate(-45deg)");
     } else {
@@ -141,6 +166,7 @@ $( "#LightbulbT" ).click(function() {
   $("#Hamar-icon").removeClass('TactiveF');
   $("#Textureinner").removeClass('Tactive');
     $("#Settingsinner").removeClass('TactiveS');
+
 
     if (  $( '#LightbulbT' ).css( "transform" ) == 'none' ){
         $('#LightbulbT').css("transform","rotate(-45deg)");
@@ -170,4 +196,8 @@ $( "#settingssnu" ).click(function() {
     } else {
         $('#settingssnu').css("transform","" );
     }
+});
+
+$( ".skiptaumlit" ).click(function(){
+  $(".skiptaumlit").css('height', "256px");
 });
