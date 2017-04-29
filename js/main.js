@@ -6,7 +6,9 @@ let welcomeLeft = document.getElementById('welcomeLeft');
 let welcomeRight = document.getElementById('welcomeRight');
 let backArrow = document.getElementById('arrow');
 
-let canvas = $(".canvasContainer").children("canvas");
+let canvas = document.getElementById("ourCanvas")
+
+let threeJSPlayground = document.getElementById('playground');
 
 const toggleListClass = () => {
     let sidemenuHowtoplay = document.getElementById("sidemenu-howtoplay-content");
@@ -29,7 +31,12 @@ const toggleListClass = () => {
 play.addEventListener("click", function() {
     welcomeLeft.style.left = "-100%";
     welcomeRight.style.right = "-100%";
+
     threeJSPlayground.classList.toggle("active-ingame");
+
+    playground.style.display = "block";
+    canvas.style.zIndex = "5";
+
 });
 
 let howToPlay = document.getElementById('howToPlay');
@@ -102,13 +109,19 @@ var picker = new CP(document.querySelector('input[type="text"]'));
 
 
   picker.on("change", function(color) {
+      this.target.value = '0x' + color;
+      cubeMaterial.color.setHex(($(".colorpikk").val()));
+
       this.target.value = '#' + color;
 
+      $(".kassilitur").css("fill", "#" + color);
+      $(".kassilitur1").css("opacity", ".9");
+      $(".kassilitur2").css("opacity", ".95");
+      $(".kassilitur3").css("opacity", "1");
 
   });
 
 
-      
 
 
 $("#texture").click(function() {
@@ -139,8 +152,7 @@ $( "#hamarsnua" ).click(function() {
     $("#ljosaperainner").removeClass('TactiveL');
       $("#Settingsinner").removeClass('TactiveS');
       $('#kassahreyfari').attr("x","13.5" );
-
-            $(".howto").toggleClass('left');
+      $('.addtexture').toggleClass("left");
 
     if (  $( '#hamarsnua' ).css( "transform" ) == 'none' ){
         $('#hamarsnua').css("transform","rotate(-45deg)");
@@ -150,12 +162,14 @@ $( "#hamarsnua" ).click(function() {
 });
 
 
-$( "#LightbulbT" ).click(function() {
+$( "#Lightbulb" ).click(function() {
   $("#ljosaperainner").toggleClass('TactiveL');
 
   $("#Hamar-icon").removeClass('TactiveF');
   $("#Textureinner").removeClass('Tactive');
     $("#Settingsinner").removeClass('TactiveS');
+    $('.addtexture').toggleClass("left");
+    $(".howto").toggleClass('left');
 
 
     if (  $( '#LightbulbT' ).css( "transform" ) == 'none' ){
@@ -191,3 +205,18 @@ $( "#settingssnu" ).click(function() {
 $( ".skiptaumlit" ).click(function(){
   $(".skiptaumlit").css('height', "256px");
 });
+
+$(".sidemenuLi").click(function() {
+    $(this).toggleClass("active");
+    if ($(this).hasClass("texture")) {
+
+    } else if ($(this).hasClass("hamar")) {
+        console.log("hamar")
+    } else if ($(this).hasClass("Lightbulb")) {
+        console.log("ljos")
+    } else if ($(this).hasClass("settings")) {
+        console.log("settings")
+    }
+})
+
+console.log();
