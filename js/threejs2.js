@@ -46,7 +46,7 @@ function init() {
     renderer = new THREE.WebGLRenderer({
         antialias: true
     });
-    renderer.setClearColor(0xf0f0f0);
+    renderer.setClearColor(0xffffff, 1.3);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -75,8 +75,6 @@ function init() {
     controls.minAzimuthAngle = -Infinity;
     controls.maxAzimuthAngle = Infinity;
 
-    console.log(objects)
-
 
     // roll-over helpers
     rollOverGeo = new THREE.BoxGeometry(50, 50, 50);
@@ -104,8 +102,8 @@ function init() {
         geometry.vertices.push(new THREE.Vector3(i, 0, size));
     }
     var material = new THREE.LineBasicMaterial({
-        color: 0x0E70000,
-        opacity: 0.5,
+        color: 0x000000,
+        opacity: .5,
         transparent: true
     });
     var line = new THREE.LineSegments(geometry, material);
@@ -113,7 +111,7 @@ function init() {
     //
     raycaster = new THREE.Raycaster();
     mouse = new THREE.Vector2();
-    var geometry = new THREE.PlaneBufferGeometry(1000, 1000);
+    var geometry = new THREE.PlaneBufferGeometry(1400, 1400);
     geometry.rotateX(-Math.PI / 2);
     plane = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
         visible: false
@@ -152,7 +150,6 @@ function onDocumentMouseMove(event) {
 }
 
 function onDocumentMouseDown(event) {
-    console.log(objects)
     event.preventDefault();
     mouse.set((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
     raycaster.setFromCamera(mouse, camera);
@@ -176,6 +173,7 @@ function onDocumentMouseDown(event) {
             objects.push(voxel);
         }
     }
+	render();
 }
 
 function onDocumentKeyDown(event) {
@@ -199,18 +197,22 @@ window.addEventListener("keydown", function(event) {
         controls.enabled = true;
         document.body.style.cursor = "move";
         rollOverMesh.material.opacity = "0";
+		isShiftDown == true;
+		render();
     }
 
 	if (event.keyCode == 17) {
         rollOverMesh.material.opacity = "0";
+		render();
     }
 });
 
 window.addEventListener("keyup", function(event) {
     if (event.keyCode == 16) {
         controls.enabled = false;
-        document.body.style.cursor = "none";
+        document.body.style.cursor = "auto";
         rollOverMesh.material.opacity = "0.5";
+		isShiftDown == false;
     }
 	if (event.keyCode == 17) {
         rollOverMesh.material.opacity = ".5";

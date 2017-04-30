@@ -8,8 +8,6 @@ let backArrow = document.getElementById('arrow');
 
 let canvas = document.getElementById('ourCanvas')
 
-let threeJSPlayground = document.getElementById('playground');
-
 const toggleListClass = () => {
     let sidemenuHowtoplay = document.getElementById("sidemenu-howtoplay-content");
     let sidemenuList = sidemenuHowtoplay.childNodes;
