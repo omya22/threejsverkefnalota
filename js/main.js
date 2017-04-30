@@ -124,7 +124,7 @@ var picker = new CP(document.querySelector('input[type="text"]'));
 
 
 
-$("#texture").click(function() {
+$(".texture").click(function() {
   $("#Textureinner").toggleClass('Tactive');
   $("#Hamar-icon").removeClass('TactiveF');
   $("#ljosaperainner").removeClass('TactiveL');
@@ -142,10 +142,9 @@ $("#texture").click(function() {
 
 });
 
-function activeRemover() {
-  $("#Textureinner").removeClass('Tactive');
-}
-$( "#hamarsnua" ).click(function() {
+
+
+$( ".hamar" ).click(function() {
 
     $("#Hamar-icon").toggleClass('TactiveF');
     $("#Textureinner").removeClass('Tactive');
@@ -162,7 +161,7 @@ $( "#hamarsnua" ).click(function() {
 });
 
 
-$( "#Lightbulb" ).click(function() {
+$( ".Lightbulb" ).click(function() {
   $("#ljosaperainner").toggleClass('TactiveL');
 
   $("#Hamar-icon").removeClass('TactiveF');
@@ -171,27 +170,21 @@ $( "#Lightbulb" ).click(function() {
     $('.addtexture').toggleClass("left");
     $(".howto").toggleClass('left');
 
-
-    if (  $( '#LightbulbT' ).css( "transform" ) == 'none' ){
-        $('#LightbulbT').css("transform","rotate(-45deg)");
+    if (  $( '#Lightbulb' ).css( "transform" ) == 'none' ){
+        $('#Lightbulb').css("transform","rotate(-45deg)");
     } else {
-        $('#LightbulbT').css("transform","" );
+        $('#Lightbulb').css("transform","" );
     }
 });
 
 
 
-$( "#settingssnu" ).click(function() {
+$( ".settings" ).click(function() {
 
   $("#Settingsinner").toggleClass('TactiveS');
   $("#ljosaperainner").removeClass('TactiveL');
   $("#Hamar-icon").removeClass('TactiveF');
   $("#Textureinner").removeClass('Tactive');
-
-
-
-
-
 
 
 
@@ -214,9 +207,18 @@ $(".sidemenuLi").click(function() {
         console.log("hamar")
     } else if ($(this).hasClass("Lightbulb")) {
         console.log("ljos")
+        $("#ljosaperainner").toggleClass('TactiveL');
+
+        $("#Hamar-icon").removeClass('TactiveF');
+        $("#Textureinner").removeClass('Tactive');
+          $("#Settingsinner").removeClass('TactiveS');
+          $('.addtexture').toggleClass("left");
+          $(".howto").toggleClass('left');
     } else if ($(this).hasClass("settings")) {
         console.log("settings")
     }
 })
 
-console.log();
+$("canvas").click(function(){
+$('.addtexture').removeClass("left");
+});

@@ -747,9 +747,7 @@ canvas {
     padding-bottom: 30px;
 }
 
-.ingame-topnav ul li svg:hover {
-    cursor: pointer;
-}
+
 
 .ingame-topnav ul li:hover {
     cursor: pointer;
@@ -763,7 +761,7 @@ canvas {
 
 .ingame-topnav ul li svg {
     width: 26%;
-    cursor: pointer;
+
     height: 30px;
 }
 
@@ -791,7 +789,7 @@ canvas {
     fill: #DC8F4B;
 }
 
-.Tactive rect {
+.TactiveS rect {
     stroke: #DC8F4B;
 }
 
@@ -799,11 +797,11 @@ canvas {
     fill: #DC8F4B;
 }
 
-.TactiveL {
+.TactiveS {
     stroke: #DC8F4B;
 }
 
-.TactiveS {
+.TactiveF {
     fill: #DC8F4B;
 }
 
@@ -824,10 +822,7 @@ canvas {
     display: flex;
     flex-direction: column;
     align-items: center;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3de44b0975b8362231a40136f5f6c9d4159bd32b
+
     justify-content: flex-end;
     height: 100%;
 }
@@ -841,7 +836,7 @@ canvas {
 .icon2 ul li {
     width: 26px;
     height: 50px;
->>>>>>> 3de44b0975b8362231a40136f5f6c9d4159bd32b
+
 }
 
 .icon1 {
