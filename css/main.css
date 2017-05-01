@@ -735,6 +735,7 @@ canvas {
 .ingame-topnav ul {
     margin: 0;
     padding: 0;
+    z-index: 9999;
 }
 
 .ingame-topnav ul li {
@@ -791,6 +792,7 @@ canvas {
 
 .TactiveS rect {
     stroke: #DC8F4B;
+    fill: transparent;
 }
 
 .TactiveF {
@@ -799,6 +801,7 @@ canvas {
 
 .TactiveS {
     stroke: #DC8F4B;
+    fill:#DC8F4B;
 }
 
 .TactiveF {
@@ -959,7 +962,7 @@ canvas {
 }
 
 .howto .keyb {
->>>>>>> 3de44b0975b8362231a40136f5f6c9d4159bd32b
+
     flex-direction: row;
     width: 180px;
 }
@@ -1006,4 +1009,10 @@ canvas {
 
 .texturizedcubes ul li:nth-child(4) {
     background-image: url('../img/brick4.svg');
+}
+
+
+.elements{
+
+
 }

@@ -125,15 +125,6 @@ var picker = new CP(document.querySelector('input[type="text"]'));
 
 
 $(".texture").click(function() {
-  $("#Textureinner").toggleClass('Tactive');
-  $("#Hamar-icon").removeClass('TactiveF');
-  $("#ljosaperainner").removeClass('TactiveL');
-    $("#Settingsinner").removeClass('TactiveS');
-    $('.addtexture').toggleClass("left");
-
-
-
-
   if (  $( '#kassahreyfari' ).attr( "x" ) == '13.5' ){
       $('#kassahreyfari').attr("x","0.5");
   } else {
@@ -142,16 +133,7 @@ $(".texture").click(function() {
 
 });
 
-
-
 $( ".hamar" ).click(function() {
-
-    $("#Hamar-icon").toggleClass('TactiveF');
-    $("#Textureinner").removeClass('Tactive');
-    $("#ljosaperainner").removeClass('TactiveL');
-      $("#Settingsinner").removeClass('TactiveS');
-      $('#kassahreyfari').attr("x","13.5" );
-      $('.addtexture').toggleClass("left");
 
     if (  $( '#hamarsnua' ).css( "transform" ) == 'none' ){
         $('#hamarsnua').css("transform","rotate(-45deg)");
@@ -160,33 +142,7 @@ $( ".hamar" ).click(function() {
     }
 });
 
-
-$( ".Lightbulb" ).click(function() {
-  $("#ljosaperainner").toggleClass('TactiveL');
-
-  $("#Hamar-icon").removeClass('TactiveF');
-  $("#Textureinner").removeClass('Tactive');
-    $("#Settingsinner").removeClass('TactiveS');
-    $('.addtexture').toggleClass("left");
-    $(".howto").toggleClass('left');
-
-    if (  $( '#Lightbulb' ).css( "transform" ) == 'none' ){
-        $('#Lightbulb').css("transform","rotate(-45deg)");
-    } else {
-        $('#Lightbulb').css("transform","" );
-    }
-});
-
-
-
 $( ".settings" ).click(function() {
-
-  $("#Settingsinner").toggleClass('TactiveS');
-  $("#ljosaperainner").removeClass('TactiveL');
-  $("#Hamar-icon").removeClass('TactiveF');
-  $("#Textureinner").removeClass('Tactive');
-
-
 
     if (  $( '#settingssnu' ).css( "transform" ) == 'none' ){
         $('#settingssnu').css("transform","rotate(-45deg)");
@@ -202,23 +158,43 @@ $( ".skiptaumlit" ).click(function(){
 $(".sidemenuLi").click(function() {
     $(this).toggleClass("active");
     if ($(this).hasClass("texture")) {
+      $("#Textureinner").toggleClass('TactiveS');
+    $("#Hamar-icon, #ljosaperainner, #Settingsinner").removeClass('TactiveS');
+      $('.elements, .howto, .stillingar').removeClass("left");
+        $(".addtexture").toggleClass('left');
+      $('#settingssnu, #hamarsnua').css("transform","" );
 
-    } else if ($(this).hasClass("hamar")) {
-        console.log("hamar")
-    } else if ($(this).hasClass("Lightbulb")) {
+      }
+
+      else if ($(this).hasClass("hamar")) {
+      $("#Hamar-icon").toggleClass('TactiveS');
+    $("#Settingsinner, #ljosaperainner, #Textureinner").removeClass('TactiveS');
+        $('.addtexture, .howto, .stillingar').removeClass("left");
+        $(".elements").toggleClass('left');
+          $('#kassahreyfari').attr("x","13.5" );
+          $('#settingssnu').css("transform","" );
+        }
+
+        else if ($(this).hasClass("Lightbulb")) {
         console.log("ljos")
-        $("#ljosaperainner").toggleClass('TactiveL');
-
-        $("#Hamar-icon").removeClass('TactiveF');
-        $("#Textureinner").removeClass('Tactive');
-          $("#Settingsinner").removeClass('TactiveS');
-          $('.addtexture').toggleClass("left");
+        $("#ljosaperainner").toggleClass('TactiveS');
+      $("#Hamar-icon, #Settingsinner, #Textureinner").removeClass('TactiveS');
+          $('.addtexture, .stillingar, .elements').removeClass("left");
           $(".howto").toggleClass('left');
-    } else if ($(this).hasClass("settings")) {
+          $('#settingssnu, #hamarsnua').css("transform","" );
+          $('#kassahreyfari').attr("x","13.5" );
+    }
+
+    else if ($(this).hasClass("settings")) {
         console.log("settings")
+        $("#Settingsinner").toggleClass('TactiveS');
+        $("#Hamar-icon, #ljosaperainner, #Textureinner").removeClass('TactiveS');
+          $('.addtexture, .howto, .elements').removeClass("left");
+          $(".stillingar").toggleClass('left');
+          $('#hamarsnua').css("transform","" );
     }
 })
 
 $("canvas").click(function(){
-$('.addtexture').removeClass("left");
+$('.addtexture, .stillingar, .howto, .elements').removeClass("left");
 });
