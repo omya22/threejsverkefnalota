@@ -106,7 +106,10 @@ backArrow.addEventListener("click", function() {
 
 var picker = new CP(document.querySelector('input[type="text"]'));
 
-
+$(".colorpikk").click(function() {
+    changeTexture('../img/textures/originaltexture.jpg')
+    cubeMaterial.color.setHex(($(".colorpikk").val()));
+});
 
   picker.on("change", function(color) {
       this.target.value = '0x' + color;

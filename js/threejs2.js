@@ -12,30 +12,7 @@ let cubeColor = 0x000000;
 
 let changeColor = document.getElementById('colorChangerrrr');
 
-console.log(isShiftDown);
-
-if (isShiftDown) {
-    console.log("shift er niðri woohoo!")
-}
-
 var element;
-
-// var lastScrollTop = 0;
-// document.addEventListener('mousewheel', function(event){
-//    var st = $(this).scrollTop();
-//    if (st > lastScrollTop){
-//        var lastScrollTop = 0;
-//        zoomer += zoomInOut
-//        camera.position.z = zoomer;
-//        render();
-//    } else {
-//        var lastScrollTop = 0;
-//        zoomer += zoomInOut
-//        camera.position.z = zoomer;
-//        render();
-//    }
-//    lastScrollTop = st;
-// });
 
 init();
 
@@ -54,11 +31,6 @@ function init() {
     element = renderer.domElement;
     element.id = 'ourCanvas';
     container.appendChild(element);
-
-    element.addEventListener("scroll", function() {
-        console.log("hallo");
-    });
-
 
 
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
@@ -88,7 +60,7 @@ function init() {
     // cubes
     cubeGeo = new THREE.BoxGeometry(50, 50, 50);
     cubeMaterial = new THREE.MeshLambertMaterial({
-        color: 0xffffff
+		map: THREE.ImageUtils.loadTexture('../img/textures/originaltexture.jpg')
     });
 
     // grid
@@ -232,3 +204,30 @@ function render() {
 
     renderer.render(scene, camera);
 }
+
+let glassCube = document.getElementById('glassCube');
+let grassCube = document.getElementById('grassCube');
+let woodCube = document.getElementById('woodCube');
+let brickCube = document.getElementById('brickCube');
+
+function changeTexture(typeOfTexture) {
+	cubeMaterial = new THREE.MeshLambertMaterial({
+		map: THREE.ImageUtils.loadTexture(typeOfTexture)
+	});
+}
+
+glassCube.addEventListener("click", function() {
+	changeTexture("../img/textures/glasstexture.jpg");
+});
+
+grassCube.addEventListener("click", function() {
+	changeTexture("../img/textures/grasstexture.jpg");
+});
+
+woodCube.addEventListener("click", function() {
+	changeTexture("../img/textures/woodtexture.jpg");
+});
+
+brickCube.addEventListener("click", function() {
+	changeTexture("../img/textures/bricktexture.png");
+});
