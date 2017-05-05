@@ -217,7 +217,7 @@ function changeTexture(typeOfTexture) {
 }
 
 glassCube.addEventListener("click", function() {
-	changeTexture("../img/textures/glasstexture.jpg");
+	changeTexture("../img/textures/clearglass1.jpg");
 });
 
 grassCube.addEventListener("click", function() {
@@ -233,4 +233,7 @@ brickCube.addEventListener("click", function() {
 });
 concreteCube.addEventListener("click", function() {
     changeTexture("../img/textures/concrete.jpg");
+});
+seaCube.addEventListener("click", function() {
+    changeTexture("../img/textures/seatexture2.jpg");
 });

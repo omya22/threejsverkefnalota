@@ -1029,7 +1029,10 @@ canvas {
     background-image: url('../img/brick4.svg');
 }
 .texturizedcubes ul li:nth-child(5) {
-    background-image: url('../img/concretecube.svg');
+    background-image: url('../img/concretecube2.svg');
+}
+.texturizedcubes ul li:nth-child(6) {
+    background-image: url('../img/seabrick1.svg');
 }
 .objectsitem ul li:nth-child(1){
     background-image: url('../img/grindverk.png');
