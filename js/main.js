@@ -199,5 +199,5 @@ $(".sidemenuLi").click(function() {
 })
 
 $("canvas").click(function(){
-$('.addtexture, .stillingar, .howto, .addobject').removeClass("left");
+$('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
 });

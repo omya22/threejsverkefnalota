@@ -231,3 +231,6 @@ woodCube.addEventListener("click", function() {
 brickCube.addEventListener("click", function() {
 	changeTexture("../img/textures/bricktexture.png");
 });
+concreteCube.addEventListener("click", function() {
+    changeTexture("../img/textures/concrete.jpg");
+});
