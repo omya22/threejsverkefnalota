@@ -5,7 +5,7 @@ let aboutUsList = document.getElementById('aboutUsList');
 let welcomeLeft = document.getElementById('welcomeLeft');
 let welcomeRight = document.getElementById('welcomeRight');
 let backArrow = document.getElementById('arrow');
-
+let HideBob = document.getElementById('Bob-T2');
 let canvas = document.getElementById("ourCanvas")
 
 let threeJSPlayground = document.getElementById('playground');
@@ -33,7 +33,7 @@ play.addEventListener("click", function() {
     welcomeRight.style.right = "-100%";
 
     threeJSPlayground.classList.toggle("active-ingame");
-
+HideBob.classList.toggle("HideBob");
     playground.style.display = "block";
     canvas.style.zIndex = "5";
 
