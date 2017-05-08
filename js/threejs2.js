@@ -209,6 +209,10 @@ let glassCube = document.getElementById('glassCube');
 let grassCube = document.getElementById('grassCube');
 let woodCube = document.getElementById('woodCube');
 let brickCube = document.getElementById('brickCube');
+let concreteCube = document.getElementById('concreteCube');
+let seaCube = document.getElementById('seaCube');
+let lavaCube = document.getElementById('lavaCube');
+
 
 function changeTexture(typeOfTexture) {
 	cubeMaterial = new THREE.MeshLambertMaterial({
@@ -231,9 +235,15 @@ woodCube.addEventListener("click", function() {
 brickCube.addEventListener("click", function() {
 	changeTexture("../img/textures/bricktexture.png");
 });
+
 concreteCube.addEventListener("click", function() {
     changeTexture("../img/textures/concrete.jpg");
 });
+
 seaCube.addEventListener("click", function() {
     changeTexture("../img/textures/seatexture2.jpg");
+});
+
+lavaCube.addEventListener("click", function() {
+    changeTexture("../img/textures/lavatexture.jpg");
 });

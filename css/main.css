@@ -1014,25 +1014,28 @@ canvas {
     width: 130px;
 }
 .texturizedcubes ul li:nth-child(1) {
-    background-image: url('../img/glasscube.svg');
+    background-image: url('../img/cubes-img/glasscube.svg');
 }
 
 .texturizedcubes ul li:nth-child(2) {
-    background-image: url('../img/grasscube.svg');
+    background-image: url('../img/cubes-img/grasscube.svg');
 }
 
 .texturizedcubes ul li:nth-child(3) {
-    background-image: url('../img/woodprufa2.svg');
+    background-image: url('../img/cubes-img/woodcube.svg');
 }
 
 .texturizedcubes ul li:nth-child(4) {
-    background-image: url('../img/brick4.svg');
+    background-image: url('../img/cubes-img/brickcube.svg');
 }
 .texturizedcubes ul li:nth-child(5) {
-    background-image: url('../img/concretecube2.svg');
+    background-image: url('../img/cubes-img/concretecube.svg');
 }
 .texturizedcubes ul li:nth-child(6) {
-    background-image: url('../img/seabrick1.svg');
+    background-image: url('../img/cubes-img/seacube.svg');
+}
+.texturizedcubes ul li:nth-child(7) {
+    background-image: url('../img/cubes-img/lavacube.svg');
 }
 .objectsitem ul li:nth-child(1){
     background-image: url('../img/grindverk.png');
