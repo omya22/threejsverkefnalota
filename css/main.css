@@ -1054,7 +1054,86 @@ canvas {
     background-image: url('../img/minicooper.png');
 }
 
-.elements{
+.Bob-T{
+  width: 400px;
+   height: 130px;
+   background-color: #66BB6A;
+   position: absolute;
+   z-index: 9999999;
+   top: 45px;
+   right: 0;
+   transition: .5s;
+   right: -140%;
+}
+
+.Bob-MS{
+  background-color: #000;
+  width: 32%;
+  height: 100%;
+  opacity: 0.1;
+
+}
 
 
+.Bob-T img{
+  opacity: 1;
+  width: 60px;
+  top: 11px;
+  position: absolute;
+  margin-left: 32px;
+  transition: 1s;
+}
+.Bob-text{
+  height: 100%;
+
+  float: right;
+    color: white;
+    /* padding-right: 37px; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding-left: 132px;
+    justify-content: center;
+}
+
+.takkar-Bob{
+  display: flex;
+    justify-content: center;
+    top: 100px;
+    position: absolute;
+    align-items: center;
+    /* margin: 0 auto; */
+    width: 100%;
+    padding-left: 22px
+}
+.takkar-Bob button {
+  background: none;
+   border: none;
+   color: white;
+   /* border-radius: 10%; */
+}
+#bobGotIt{
+           color: white;
+           border-radius: 4px;
+           text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            background: rgb(223, 117, 20);
+            margin-left: 29%;
+}
+#skip-T{
+  margin-left: 31%;
+}
+.welcome1{
+  display: block;
+  min-width: 252.575px;
+
+}
+
+.skref1{
+  display: none;
+}
+
+
+.HideBob{
+  right: 0%;
+  transition: .5s;
 }

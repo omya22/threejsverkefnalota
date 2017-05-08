@@ -201,3 +201,56 @@ $(".sidemenuLi").click(function() {
 $("canvas").click(function(){
 $('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
 });
+
+    let bobHeading = document.getElementById('bobHeading');
+    let bobParagraph = document.getElementById('bobParagraph');
+    // let bobGotIt = document.getElementById('bobGotIt');
+
+    let clicks = 0;
+
+    function gotIt(){
+
+
+      if (clicks==1){
+        changeBob("Add your first cube", "Click on the playground");
+      }
+      else if (clicks==2) {
+        changeBob("Change the color", "Try changing the color or the texture");
+      }
+      else if (clicks==3){
+        changeBob("Erease cube", "Hold CTRL and click cube to erease");
+
+      }
+      else if (clicks==4){
+        changeBob("Change view", "Hold shift to change view");
+
+      }
+      else if (clicks==5){
+        changeBob("Challenges", "You wanna challenge?");
+
+      }
+    }
+
+function changeBob(heading,paragraph) {
+  bobHeading.innerHTML = heading;
+  bobParagraph.innerHTML = paragraph;
+}
+
+changeBob("Hi, I'm Bob." , "Welcome to BIULDR, I'll be your guide.");
+
+$('#bobGotIt').click(function() {
+  clicks++;
+  $('.Bob-T').toggleClass('HideBob');
+  setTimeout(function() {
+    gotIt();
+    $('.Bob-T').toggleClass('HideBob');
+  }, 1000)
+})
+
+$('#skip-T').click(function(){
+
+  $('.Bob-T').toggleClass('HideBob');
+})
+
+// });
+
