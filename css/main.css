@@ -878,7 +878,15 @@ canvas {
 .icon2 ul li {
     width: 26px;
     height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
+
+.icon2 img{
+width: 60px;
+padding-bottom: 40px;
 }
 
 .icon1 {
@@ -1140,6 +1148,18 @@ canvas {
     justify-content: center;
 }
 
+
+#bobHeading{
+font-size: 22px;
+      font-weight: 700;
+      margin-top: 30px;
+      margin-bottom: 6px;
+
+}
+#bobParagraph{
+  font-size: 14px;
+}
+
 .takkar-Bob{
   display: flex;
     justify-content: center;
@@ -1162,15 +1182,42 @@ canvas {
            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
             background: rgb(223, 117, 20);
             margin-left: 29%;
+            font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 0.5px;
 }
 #skip-T{
   margin-left: 31%;
+  font-size: 13px;
+    font-weight: 400;
+    color: #ffffff;
 }
 .welcome1{
   display: block;
   min-width: 252.575px;
 
 }
+#welcome2 {
+  display: flex;
+
+}
+
+#welcome2 input{
+  width: 60%;
+  background: none;
+  border: 1px solid white;
+
+
+}
+#welcome2 h2{
+
+font-size: 22px;
+      font-weight: 700;
+      margin-top: 30px;
+      margin-bottom: 6px;
+}
+
+
 
 .skref1{
   display: none;
