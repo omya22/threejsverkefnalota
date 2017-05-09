@@ -9,40 +9,10 @@ let controls;
 let zoomer = 1500;
 let zoomInOut = 50;
 let cubeColor = 0x000000;
-let cubeCounter = 0;
 
 let changeColor = document.getElementById('colorChangerrrr');
 
 var element;
-
-// const {createStore, combineReducers} = Redux;
-
-const {createStore} = Redux;
-
-const construction = (state = [], action)=>{
-  if(action.type == "ADD_VOXEL"){
-    return state.concat([action.voxel]);
-  }
-  else if(action.type == "REMOVE_VOXEL"){
-    return state.filter((voxel, index)=>{
-      if(action.index === index){
-        return false
-      }
-      else{
-        return true
-      }
-    })
-  }
-  else if (action.type == "ADD_PLANE"){
-      return state.concat([action.plane])
-  } else {
-      return state;
-  }
-}
-
-const store = createStore(construction);
-
-
 
 init();
 
@@ -78,7 +48,7 @@ function init() {
     controls.maxAzimuthAngle = Infinity;
 
 
-
+    // roll-over helpers
     rollOverGeo = new THREE.BoxGeometry(50, 50, 50);
     rollOverMaterial = new THREE.MeshBasicMaterial({
         color: 0xff0000,
@@ -87,14 +57,13 @@ function init() {
     });
     rollOverMesh = new THREE.Mesh(rollOverGeo, rollOverMaterial);
     scene.add(rollOverMesh);
-
+    // cubes
     cubeGeo = new THREE.BoxGeometry(50, 50, 50);
     cubeMaterial = new THREE.MeshLambertMaterial({
-		map: THREE.ImageUtils.loadTexture('../img/textures/originaltexture.jpg'),
-        opacity: .5,
+		map: THREE.ImageUtils.loadTexture('../img/textures/originaltexture.jpg')
     });
 
-
+    // grid
     var size = 700,
         step = 50;
     var geometry = new THREE.Geometry();
@@ -111,7 +80,7 @@ function init() {
     });
     var line = new THREE.LineSegments(geometry, material);
     scene.add(line);
-
+    //
     raycaster = new THREE.Raycaster();
     mouse = new THREE.Vector2();
     var geometry = new THREE.PlaneBufferGeometry(1400, 1400);
@@ -120,8 +89,8 @@ function init() {
         visible: false
     }));
     scene.add(plane);
-    store.dispatch({type:"ADD_PLANE", plane});
-
+    objects.push(plane);
+    // Lights
     var ambientLight = new THREE.AmbientLight(0x606060);
     scene.add(ambientLight);
     var directionalLight = new THREE.DirectionalLight(0xffffff);
@@ -143,56 +112,37 @@ function onDocumentMouseMove(event) {
     event.preventDefault();
     mouse.set((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
     raycaster.setFromCamera(mouse, camera);
-    var intersects = raycaster.intersectObjects(store.getState());
+    var intersects = raycaster.intersectObjects(objects);
     if (intersects.length > 0) {
         var intersect = intersects[0];
         rollOverMesh.position.copy(intersect.point).add(intersect.face.normal);
         rollOverMesh.position.divideScalar(50).floor().multiplyScalar(50).addScalar(25);
     }
-    if (isCTRLDown) {
-        rollOverMesh.material.opacity = "0";
-    }
     render();
 }
 
 function onDocumentMouseDown(event) {
-    // event.preventDefault();
+    event.preventDefault();
     mouse.set((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
     raycaster.setFromCamera(mouse, camera);
-    var intersects = raycaster.intersectObjects(store.getState());
+    var intersects = raycaster.intersectObjects(objects);
     if (intersects.length > 0) {
         var intersect = intersects[0];
+        // delete cube
         if (isCTRLDown) {
-            rollOverMesh.material.opacity = "0";
             if (intersect.object != plane) {
-                store.dispatch({type:"REMOVE_VOXEL", index: store.getState().indexOf(intersect.object)} )
-                cubeCounter++;
-                $('#cubeCounter').html(cubeCounter);
                 scene.remove(intersect.object);
+                objects.splice(objects.indexOf(intersect.object), 1);
+                console.log(objects)
+                console.log(objects.indexOf(intersect.object))
             }
-        } else if (!isShiftDown){
-            if ($('body').hasClass('ingame')) {
-                if ($('#cubeCounter').hasClass("up")) {
-                    cubeCounter++;
-                } else {
-                    cubeCounter--;
-                }
-                if (cubeCounter === 0) {
-                    alert("Done!");
-                }
-                $('#cubeCounter').html(cubeCounter);
-                var voxel = new THREE.Mesh(cubeGeo, cubeMaterial.clone());
-                voxel.position.copy(intersect.point).add(intersect.face.normal);
-                voxel.position.divideScalar(50).floor().multiplyScalar(50).addScalar(25);
-                store.getState().map(obj => {
-                    scene.remove(obj)
-                })
-                store.dispatch({type:"ADD_VOXEL", voxel})
-                store.getState().map(obj => {
-                    scene.add(obj)
-                })
-                // console.log(store.getState());
-            }
+            // create cube
+        } else {
+            var voxel = new THREE.Mesh(cubeGeo, cubeMaterial.clone());
+            voxel.position.copy(intersect.point).add(intersect.face.normal);
+            voxel.position.divideScalar(50).floor().multiplyScalar(50).addScalar(25);
+            scene.add(voxel);
+            objects.push(voxel);
         }
     }
 	render();
@@ -203,16 +153,6 @@ function onDocumentKeyDown(event) {
         case 17:
             isCTRLDown = true;
             break;
-        case 16:
-            isShiftDown = true;
-            break;
-    }
-    if (isShiftDown) {
-        controls.enabled = true;
-        document.body.style.cursor = "move";
-        rollOverMesh.material.opacity = "0";
-        isShiftDown == true;
-        render();
     }
 }
 
@@ -221,21 +161,40 @@ function onDocumentKeyUp(event) {
         case 17:
             isCTRLDown = false;
             break;
-        case 16:
-            isShiftDown = false;
-            break;
-    }
-    if (!isShiftDown) {
-        controls.enabled = false;
-        document.body.style.cursor = "auto";
-        rollOverMesh.material.opacity = "0.5";
-        isShiftDown == false;
     }
 }
 
+window.addEventListener("keydown", function(event) {
+    if (event.keyCode == 16) {
+        controls.enabled = true;
+        document.body.style.cursor = "move";
+        rollOverMesh.material.opacity = "0";
+		isShiftDown == true;
+		render();
+    }
+
+	if (event.keyCode == 17) {
+        rollOverMesh.material.opacity = "0";
+		render();
+    }
+});
+
+window.addEventListener("keyup", function(event) {
+    if (event.keyCode == 16) {
+        controls.enabled = false;
+        document.body.style.cursor = "auto";
+        rollOverMesh.material.opacity = "0.5";
+		isShiftDown == false;
+    }
+	if (event.keyCode == 17) {
+        rollOverMesh.material.opacity = ".5";
+    }
+});
+
 function animate() {
     requestAnimationFrame(animate);
-    controls.update();
+    controls.update(); // required if controls.enableDamping = true, or if controls.autoRotate = true
+    // stats.update();
     render();
 }
 

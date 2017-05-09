@@ -6,7 +6,7 @@ let welcomeLeft = document.getElementById('welcomeLeft');
 let welcomeRight = document.getElementById('welcomeRight');
 let backArrow = document.getElementById('arrow');
 let HideBob = document.getElementById('Bob-T2');
-let canvas = document.getElementById("ourCanvas")
+let canvas = document.getElementById("ourCanvas");
 
 let threeJSPlayground = document.getElementById('playground');
 
@@ -31,16 +31,11 @@ const toggleListClass = () => {
 play.addEventListener("click", function() {
     welcomeLeft.style.left = "-100%";
     welcomeRight.style.right = "-100%";
-    document.body.className += "ingame";
-    threeJSPlayground.classList.toggle("active-ingame");
 
+    threeJSPlayground.classList.toggle("active-ingame");
+HideBob.classList.toggle("HideBob");
     playground.style.display = "block";
     canvas.style.zIndex = "5";
-
-
-    setTimeout(function() {
-        HideBob.classList.toggle("HideBob");
-    }, 1000)
 
 });
 
@@ -109,10 +104,10 @@ backArrow.addEventListener("click", function() {
 // INGAME JS
 //Búa til IF-- then hér..
 
-var picker = new CP(document.querySelector('.colorpikk'));
+var picker = new CP(document.querySelector('input[type="text"]'));
 
 $(".colorpikk").click(function() {
-    changeTexture('../img/textures/originaltexture.jpg')
+    changeTexture('.../img/textures/originaltexture.jpg')
     cubeMaterial.color.setHex(($(".colorpikk").val()));
 });
 
@@ -205,10 +200,24 @@ $(".sidemenuLi").click(function() {
 
 $("canvas").click(function(){
 $('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
+  $("#Hamar-icon, #ljosaperainner, #Textureinner, #Settingsinner").removeClass('TactiveS');
+    $('#kassahreyfari').attr("x","13.5" );
+        $('#hamarsnua').css("transform","" );
+          $('#settingssnu').css("transform","" );
 });
 
+
+// $("#play").click(function () {
+//     $('.Bob-T').toggleClass('TactiveS');
+
+    let buttontrue = document.getElementById('bobGotIt')
+    let buttongamefalse = document.getElementById('skip-T')
     let bobHeading = document.getElementById('bobHeading');
     let bobParagraph = document.getElementById('bobParagraph');
+    let inputTime = document.getElementById('inputTime');
+    let inputCubes = document.getElementById('inputCubes');
+    let pulsin =  document.getElementById('texturepuls');
+
     // let bobGotIt = document.getElementById('bobGotIt');
 
     let clicks = 0;
@@ -218,13 +227,15 @@ $('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
 
       if (clicks==1){
         changeBob("Add your first cube", "Click on the playground");
+
       }
       else if (clicks==2) {
         changeBob("Change the color", "Try changing the color or the texture");
+          pulsin.classList.add("activepuls");
       }
       else if (clicks==3){
         changeBob("Erease cube", "Hold CTRL and click cube to erease");
-
+  pulsin.classList.remove("activepuls");
       }
       else if (clicks==4){
         changeBob("Change view", "Hold shift to change view");
@@ -232,11 +243,13 @@ $('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
       }
       else if (clicks==5){
         changeBob("Challenges", "You wanna challenge?");
-        $('#bobGotIt').click(function() {
-            $('.ingame-challenges').css("top", "10px");
-            $('.Bob-T').css("right", "-100%")
-        })
+        buttontrue.innerHTML = "Yes";
+        buttongamefalse.innerHTML = "No Thanks";
+buttongamefalse.style.marginLeft = "3%"
 
+      }
+      else if (clicks==6){
+HideBob.classList.toggle("HideBob");
       }
     }
 
@@ -260,79 +273,5 @@ $('#skip-T').click(function(){
 
   $('.Bob-T').toggleClass('HideBob');
 })
-
-//
-//
-//
-//  CHALLENGES
-//
-//
-//
-
-$('.challenges_go').click(function() {
-
-    if ($('.challenge_max_input').val() === "") {
-        $('#cubeCounter').toggleClass("up");
-        $('#cubeCounter').html(0);
-    }
-
-    $('#cubeCounter').html(parseInt($('.challenge_max_input').val()));
-    cubeCounter = parseInt($('.challenge_max_input').val());
-    $('.ingame-challenges').css('top', '-100%');
-
-    setTimeout(function() {
-        $('.challenges_setup').css("display", "none");
-        $('.challenges_active').css("display", "block");
-    }, 100)
-
-    $('#progressBar').css('transition', $('.challenge_time_input').val() + 's linear');
-
-    setTimeout(function() {
-        $('.ingame-challenges').css('top', '10px');
-        $('#progressBar').css('strokeDashoffset', "-101%");
-    }, 800)
-
-
-    return cubeCounter;
-
-})
-
-// setInterval(function() {
-//     console.log(cubeCounter);
-// }, 1000);
-
-let timer = document.getElementById("timer");
-let progressBar = document.getElementById("progressBar");
-let startTimer = document.getElementById("startTimer");
-let secondsCounter = document.getElementById("secondsCounter");
-let testInput = document.getElementById("testInput");
-let replay = document.getElementById("replay");
-let replayTest = document.getElementById("Page-1");
-
-function startTimerFun() {
-    console.log(testInput.value)
-    progressBar.style.stroke = "#7DF483";
-    progressBar.style.transition = testInput.value + "s linear";
-    progressBar.style.strokeDashoffset = "-101%";
-    let seconds = testInput.value;
-    // if (progressBar.style.strokeDashoffset === "-283%") {
-    //     alert("YOURE TIME IS FINIIIISHEEDD!");
-    // }
-    let myInterval = setInterval(function() {
-            seconds--;
-            if (seconds === 0) {
-                clearInterval(myInterval)
-                progressBar.style.stroke = "#E78478";
-                progressBar.style.transition = "1s";
-                progressBar.style.strokeDashoffset = "0%";
-                secondsCounter.style.opacity = "0";
-                replay.style.opacity = "1";
-                setTimeout(function() {
-                    progressBar.style.stroke = "#7DF483";
-                }, 1000)
-            }
-        }, 1000);
-}
-
 
 // });
