@@ -205,11 +205,19 @@ $(".sidemenuLi").click(function() {
 
 $("canvas").click(function(){
 $('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
+  $("#Hamar-icon, #ljosaperainner, #Textureinner, #Settingsinner").removeClass('TactiveS');
+    $('#kassahreyfari').attr("x","13.5" );
+        $('#hamarsnua').css("transform","" );
+          $('#settingssnu').css("transform","" );
 });
 
+    let buttontrue = document.getElementById('bobGotIt')
+    let buttongamefalse = document.getElementById('skip-T')
     let bobHeading = document.getElementById('bobHeading');
     let bobParagraph = document.getElementById('bobParagraph');
-    // let bobGotIt = document.getElementById('bobGotIt');
+    let inputTime = document.getElementById('inputTime');
+    let inputCubes = document.getElementById('inputCubes');
+    let pulsin =  document.getElementById('texturepuls');
 
     let clicks = 0;
 
@@ -221,9 +229,11 @@ $('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
       }
       else if (clicks==2) {
         changeBob("Change the color", "Try changing the color or the texture");
+        pulsin.classList.add("activepuls");
       }
       else if (clicks==3){
         changeBob("Erease cube", "Hold CTRL and click cube to erease");
+        pulsin.classList.remove("activepuls");
 
       }
       else if (clicks==4){
@@ -232,6 +242,10 @@ $('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
       }
       else if (clicks==5){
         changeBob("Challenges", "You wanna challenge?");
+        changeBob("Challenges", "You wanna challenge?");
+        buttontrue.innerHTML = "Yes";
+        buttongamefalse.innerHTML = "No Thanks";
+        buttongamefalse.style.marginLeft = "3%";
         $('#bobGotIt').click(function() {
             $('.ingame-challenges').css("top", "10px");
             $('.Bob-T').css("right", "-100%")

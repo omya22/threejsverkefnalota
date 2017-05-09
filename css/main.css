@@ -709,8 +709,23 @@ canvas {
     transition: 1s;
     top: 0;
     z-index: 6;
-    overflow: scroll;
+    overflow-y: scroll;
 }
+
+.nav::-webkit-scrollbar {
+  width: 10px;
+}
+
+.nav::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 20px;
+}
+
+.nav::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 20px;
+}
+
 
 .ingame-sidemenu {
     width: 110px;
@@ -776,24 +791,47 @@ canvas {
 }
 
 #settingssnu {
-    transition: .3s;
+    transition: .3s ease-in-out;
 }
 
 #hamarsnua {
-    transition: .3s;
+    transition: .3s ease-in-out;
 }
 
 .ingame-topnav ul li:nth-child(1) svg g rect {
     transition: .3s ease-in-out;
+
 }
+
+
+
 
 .ingame-topnav ul li:hover svg path {
     fill: #DC8F4B;
 }
 
 .TactiveS rect {
+
     stroke: #DC8F4B;
     fill: transparent;
+}
+
+.activepuls rect {
+  animation: puls 2s infinite ease-in-out;
+}
+
+@keyframes puls {
+
+  0% {
+  stroke: #DC8F4B;
+}
+50% {
+  stroke: #fff;
+}
+100% {
+  stroke: #DC8F4B;
+}
+
 }
 
 .TactiveF {
@@ -1054,6 +1092,12 @@ canvas {
     background-image: url('../img/minicooper.png');
 }
 
+.elements{
+
+
+}
+
+
 .Bob-T{
   width: 400px;
    height: 130px;
@@ -1062,7 +1106,7 @@ canvas {
    z-index: 9999999;
    top: 45px;
    right: 0;
-   transition: .5s;
+   transition: 1s ease-in-out;
    right: -140%;
 }
 
@@ -1081,7 +1125,7 @@ canvas {
   top: 11px;
   position: absolute;
   margin-left: 32px;
-  transition: 1s;
+  transition: 1s ;
 }
 .Bob-text{
   height: 100%;
@@ -1119,26 +1163,25 @@ canvas {
             background: rgb(223, 117, 20);
             margin-left: 29%;
 }
-
-#skip-T {
+#skip-T{
   margin-left: 31%;
 }
-
-.welcome1 {
+.welcome1{
   display: block;
   min-width: 252.575px;
 
 }
 
-.skref1 {
+.skref1{
   display: none;
 }
 
 
 .HideBob{
-  right: 3%;
-  transition: .5s;
+  right: 0%;
+  transition: 1s ease-in-out;
 }
+
 
 .ingame-challenges {
     position: absolute;

@@ -1,10 +1,10 @@
-var container;
-var camera, scene, renderer;
-var plane, cube;
-var mouse, raycaster, isCTRLDown, isShiftDown = false;
-var rollOverMesh, rollOverMaterial;
-var cubeGeo, cubeMaterial;
-var objects = [];
+let container;
+let camera, scene, renderer;
+let plane, cube;
+let mouse, raycaster, isCTRLDown, isShiftDown = false;
+let rollOverMesh, rollOverMaterial;
+let cubeGeo, cubeMaterial;
+let objects = [];
 let controls;
 let zoomer = 1500;
 let zoomInOut = 50;
@@ -13,7 +13,7 @@ let cubeCounter = 0;
 
 let changeColor = document.getElementById('colorChangerrrr');
 
-var element;
+let element;
 
 // const {createStore, combineReducers} = Redux;
 
@@ -95,26 +95,26 @@ function init() {
     });
 
 
-    var size = 700,
+    let size = 700,
         step = 50;
-    var geometry = new THREE.Geometry();
-    for (var i = -size; i <= size; i += step) {
+    let geometry = new THREE.Geometry();
+    for (let i = -size; i <= size; i += step) {
         geometry.vertices.push(new THREE.Vector3(-size, 0, i));
         geometry.vertices.push(new THREE.Vector3(size, 0, i));
         geometry.vertices.push(new THREE.Vector3(i, 0, -size));
         geometry.vertices.push(new THREE.Vector3(i, 0, size));
     }
-    var material = new THREE.LineBasicMaterial({
+    let material = new THREE.LineBasicMaterial({
         color: 0x000000,
         opacity: .5,
         transparent: true
     });
-    var line = new THREE.LineSegments(geometry, material);
+    let line = new THREE.LineSegments(geometry, material);
     scene.add(line);
 
     raycaster = new THREE.Raycaster();
     mouse = new THREE.Vector2();
-    var geometry = new THREE.PlaneBufferGeometry(1400, 1400);
+    geometry = new THREE.PlaneBufferGeometry(1400, 1400);
     geometry.rotateX(-Math.PI / 2);
     plane = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
         visible: false
@@ -122,9 +122,9 @@ function init() {
     scene.add(plane);
     store.dispatch({type:"ADD_PLANE", plane});
 
-    var ambientLight = new THREE.AmbientLight(0x606060);
+    let ambientLight = new THREE.AmbientLight(0x606060);
     scene.add(ambientLight);
-    var directionalLight = new THREE.DirectionalLight(0xffffff);
+    let directionalLight = new THREE.DirectionalLight(0xffffff);
     directionalLight.position.set(1, 0.75, 0.5).normalize();
     scene.add(directionalLight);
     container.appendChild(renderer.domElement);
@@ -143,9 +143,9 @@ function onDocumentMouseMove(event) {
     event.preventDefault();
     mouse.set((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
     raycaster.setFromCamera(mouse, camera);
-    var intersects = raycaster.intersectObjects(store.getState());
+    let intersects = raycaster.intersectObjects(store.getState());
     if (intersects.length > 0) {
-        var intersect = intersects[0];
+        let intersect = intersects[0];
         rollOverMesh.position.copy(intersect.point).add(intersect.face.normal);
         rollOverMesh.position.divideScalar(50).floor().multiplyScalar(50).addScalar(25);
     }
@@ -159,9 +159,9 @@ function onDocumentMouseDown(event) {
     // event.preventDefault();
     mouse.set((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
     raycaster.setFromCamera(mouse, camera);
-    var intersects = raycaster.intersectObjects(store.getState());
+    let intersects = raycaster.intersectObjects(store.getState());
     if (intersects.length > 0) {
-        var intersect = intersects[0];
+        let intersect = intersects[0];
         if (isCTRLDown) {
             rollOverMesh.material.opacity = "0";
             if (intersect.object != plane) {
@@ -181,7 +181,7 @@ function onDocumentMouseDown(event) {
                     alert("Done!");
                 }
                 $('#cubeCounter').html(cubeCounter);
-                var voxel = new THREE.Mesh(cubeGeo, cubeMaterial.clone());
+                let voxel = new THREE.Mesh(cubeGeo, cubeMaterial.clone());
                 voxel.position.copy(intersect.point).add(intersect.face.normal);
                 voxel.position.divideScalar(50).floor().multiplyScalar(50).addScalar(25);
                 store.getState().map(obj => {
@@ -257,18 +257,18 @@ function changeTexture(typeOfTexture) {
 	});
 }
 
-glassCube.addEventListener("click", function() {
+glassCube.addEventListener("click", () => {
 	changeTexture("../img/textures/glasstexture.jpg");
 });
 
-grassCube.addEventListener("click", function() {
+grassCube.addEventListener("click", () => {
 	changeTexture("../img/textures/grasstexture.jpg");
 });
 
-woodCube.addEventListener("click", function() {
+woodCube.addEventListener("click", () => {
 	changeTexture("../img/textures/woodtexture.jpg");
 });
 
-brickCube.addEventListener("click", function() {
+brickCube.addEventListener("click", () => {
 	changeTexture("../img/textures/bricktexture.png");
 });
