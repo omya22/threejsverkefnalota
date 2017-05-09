@@ -284,14 +284,29 @@ $('#skip-T').click(function(){
 //
 
 $('.challenges_go').click(function() {
+    let seconds = parseInt($('.challenge_time_input').val());
+    let cubeCounterValue = document.getElementById('cubeCounter')
 
-    if ($('.challenge_max_input').val() === "") {
-        $('#cubeCounter').toggleClass("up");
-        $('#cubeCounter').html(0);
+    if ($('.challenge_time_input').val() === "") {
+        alert("tomt input!!")
+    } else {
+        setInterval(function secondTimer() {
+            console.log(seconds)
+            seconds--;
+            if (seconds === -1) {
+                alert("timinn er búinn!!");
+            }
+        }, 1000)
     }
 
-    $('#cubeCounter').html(parseInt($('.challenge_max_input').val()));
-    cubeCounter = parseInt($('.challenge_max_input').val());
+    if ($('.challenge_max_input').val() === "" || $('.challenge_max_input').val() === "0") {
+        $('#cubeCounter').toggleClass("up");
+        cubeCounterValue.innerHTML = 0;
+    } else {
+        $('#cubeCounter').html(parseInt($('.challenge_max_input').val()));
+        cubeCounter = parseInt($('.challenge_max_input').val());
+    }
+
     $('.ingame-challenges').css('top', '-100%');
 
     setTimeout(function() {

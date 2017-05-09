@@ -966,6 +966,13 @@ canvas {
 
 /* Togglað div -howto- */
 
+.ingame-howtoplay-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .howto, .addtexture, .addobject, .settingsdiv {
     flex-direction: column;
     justify-content: flex-start;
@@ -987,26 +994,25 @@ canvas {
 
 .howto p {
     color: #FFFFFF;
-    font-size: 15px;
-    font-weight: 100;
+    font-size: 1.5em;
+    font-weight: 300;
     flex-direction: row;
     align-self: flex-start;
-    margin-left: 30px;
-    margin-top: 26px;
+    margin: 26px auto 5px;
 }
 
 #addcubeimg {
     align-self: flex-start;
-    padding-left: 55px;
+    margin: 10px auto 5px;
 }
 
 .howto .keyb {
-
-    flex-direction: row;
-    width: 180px;
+    margin: 0 auto 10px;
+    text-align: center;
 }
 
 .howto .keys {
+    margin-top: 10px;
     padding: 0px 15px 0px 0px;
 }
 
@@ -1185,7 +1191,7 @@ canvas {
 
 .ingame-challenges {
     position: absolute;
-    top: -100;
+    top: 10px;
     left: 35vw;
     width: 400px;
     height: 150px;
