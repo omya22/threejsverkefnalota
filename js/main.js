@@ -31,11 +31,16 @@ const toggleListClass = () => {
 play.addEventListener("click", function() {
     welcomeLeft.style.left = "-100%";
     welcomeRight.style.right = "-100%";
-
+    document.body.className += "ingame";
     threeJSPlayground.classList.toggle("active-ingame");
-HideBob.classList.toggle("HideBob");
+
     playground.style.display = "block";
     canvas.style.zIndex = "5";
+
+
+    setTimeout(function() {
+        HideBob.classList.toggle("HideBob");
+    }, 1000)
 
 });
 
@@ -104,7 +109,7 @@ backArrow.addEventListener("click", function() {
 // INGAME JS
 //Búa til IF-- then hér..
 
-var picker = new CP(document.querySelector('input[type="text"]'));
+var picker = new CP(document.querySelector('.colorpikk'));
 
 $(".colorpikk").click(function() {
     changeTexture('../img/textures/originaltexture.jpg')
@@ -227,6 +232,10 @@ $('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
       }
       else if (clicks==5){
         changeBob("Challenges", "You wanna challenge?");
+        $('#bobGotIt').click(function() {
+            $('.ingame-challenges').css("top", "10px");
+            $('.Bob-T').css("right", "-100%")
+        })
 
       }
     }
@@ -252,5 +261,78 @@ $('#skip-T').click(function(){
   $('.Bob-T').toggleClass('HideBob');
 })
 
-// });
+//
+//
+//
+//  CHALLENGES
+//
+//
+//
 
+$('.challenges_go').click(function() {
+
+    if ($('.challenge_max_input').val() === "") {
+        $('#cubeCounter').toggleClass("up");
+        $('#cubeCounter').html(0);
+    }
+
+    $('#cubeCounter').html(parseInt($('.challenge_max_input').val()));
+    cubeCounter = parseInt($('.challenge_max_input').val());
+    $('.ingame-challenges').css('top', '-100%');
+
+    setTimeout(function() {
+        $('.challenges_setup').css("display", "none");
+        $('.challenges_active').css("display", "block");
+    }, 100)
+
+    $('#progressBar').css('transition', $('.challenge_time_input').val() + 's linear');
+
+    setTimeout(function() {
+        $('.ingame-challenges').css('top', '10px');
+        $('#progressBar').css('strokeDashoffset', "-101%");
+    }, 800)
+
+
+    return cubeCounter;
+
+})
+
+// setInterval(function() {
+//     console.log(cubeCounter);
+// }, 1000);
+
+let timer = document.getElementById("timer");
+let progressBar = document.getElementById("progressBar");
+let startTimer = document.getElementById("startTimer");
+let secondsCounter = document.getElementById("secondsCounter");
+let testInput = document.getElementById("testInput");
+let replay = document.getElementById("replay");
+let replayTest = document.getElementById("Page-1");
+
+function startTimerFun() {
+    console.log(testInput.value)
+    progressBar.style.stroke = "#7DF483";
+    progressBar.style.transition = testInput.value + "s linear";
+    progressBar.style.strokeDashoffset = "-101%";
+    let seconds = testInput.value;
+    // if (progressBar.style.strokeDashoffset === "-283%") {
+    //     alert("YOURE TIME IS FINIIIISHEEDD!");
+    // }
+    let myInterval = setInterval(function() {
+            seconds--;
+            if (seconds === 0) {
+                clearInterval(myInterval)
+                progressBar.style.stroke = "#E78478";
+                progressBar.style.transition = "1s";
+                progressBar.style.strokeDashoffset = "0%";
+                secondsCounter.style.opacity = "0";
+                replay.style.opacity = "1";
+                setTimeout(function() {
+                    progressBar.style.stroke = "#7DF483";
+                }, 1000)
+            }
+        }, 1000);
+}
+
+
+// });

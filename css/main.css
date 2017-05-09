@@ -1119,21 +1119,109 @@ canvas {
             background: rgb(223, 117, 20);
             margin-left: 29%;
 }
-#skip-T{
+
+#skip-T {
   margin-left: 31%;
 }
-.welcome1{
+
+.welcome1 {
   display: block;
   min-width: 252.575px;
 
 }
 
-.skref1{
+.skref1 {
   display: none;
 }
 
 
 .HideBob{
-  right: 0%;
+  right: 3%;
   transition: .5s;
+}
+
+.ingame-challenges {
+    position: absolute;
+    top: -100;
+    left: 35vw;
+    width: 400px;
+    height: 150px;
+    z-index: 10000000;
+    background-color: #66BB6A;
+    color: #fff;
+    transition: 1s;
+    text-align: center;
+}
+
+#progressBar {
+    stroke: #7DF483;
+    stroke-width: 6px;
+}
+
+#replay {
+    position: absolute;
+    top: 44%;
+    left: 90px;
+    cursor: pointer;
+    transition: 1s;
+    opacity: 0;
+}
+
+#secondsCounter {
+    position: absolute;
+    top: 35%;
+    left: 87px;
+    cursor: pointer;
+    color: #7DF483;
+    font-size: 1.3em;
+}
+
+.timer-container {
+    position: relative;
+}
+
+#timer {
+    margin-top: -23px;
+}
+
+.challenges_active div div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 150px;
+}
+
+.ingame-challenges div div input, .ingame-challenges div div input:focus {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: #66BB6A;
+    outline: none;
+    font-size: 1.3em;
+    text-align: center;
+    width: 43px;
+}
+
+.challenges_go {
+    position: absolute;
+    bottom: 10px;
+    left: 180px;
+    color: #fff;
+}
+
+#cubeCounter {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin: 0;
+}
+
+.challenges_max_cubes h2, .challenges_time h2 {
+    margin-top: 34px;
+}
+
+#challengeMe {
+    font-size: 1em;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
 }
