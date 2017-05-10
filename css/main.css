@@ -316,8 +316,12 @@ canvas {
     top: -100%;
 }
 
+.hero-howtoplay-content-wrapper h3 {
+    font-size: .8em;
+}
+
 .hero-howtoplay svg, .hero-aboutus svg {
-    margin-top: 15%;
+    margin-top: 8%;
 }
 
 .hero-howtoplay h2, .hero-aboutus h2 {
@@ -359,15 +363,21 @@ canvas {
 .hero-howtoplay-content p, .hero-aboutus-content p {
     width: 50%;
     margin: 0 auto;
+    line-height: 1.2;
 }
 
 .hero-howtoplay-content {
     justify-content: flex-start;
 }
+.hero-howtoplay-content-wrapper h3{
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.2;
+}
 
 .hero-howtoplay-content-wrapper {
-    margin-top: 14%;
-    width: 60%;
+    margin-top: 6%;
+    width: 80%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -378,7 +388,6 @@ canvas {
     margin-top: 14%;
     list-style: none;
     font-weight: 300;
-    margin-left: 60px;
 }
 
 .hero-howtoplay-content-wrapper ul li {
@@ -396,58 +405,115 @@ canvas {
     background-repeat: no-repeat;
     margin-right: 50px;
 }
+.keybindingshowto ul li:before {
+    display: none;
+}
+.kassihowto, .objecthowto, .keybindingshowto{
+    display: flex;
+    font-size: 22px;
+}
+.kassihoto img{
+    padding-right: 20%;
+}
+.objecthowto p{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-right: 20px;
+}
+.objecthoto img{
+    height: 50px;
+    width: 50px;
+    padding-left: 20px;
+}
+.keybindingshowto{
+    flex-direction: row;
+    width: 50%;
+}
+.keybindingshowto ul{
+    margin-top: 0px;
+}
+.keybindingsright{
+    width: 50%;
+    align-self: flex-start;
+}
+.keybindingsright p{
+    font-size: 22px;
+    width: 70%;
+}
+.keybindingsright img{
+    margin-top: 80px;
+}
+.keybindingshowto ul li p, .keybindingsright ul li p{
+    font-size: 22px;
+    width: 100%;
+}
+.keybindingshowto ul li{
+    flex-direction: column;
+    margin: 0px;
+    height: 140px;
+}
+.keybindingshowto ul li img{
+    height: 50px;
+    width: 30px;
+    margin-top: 30px;
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+#mus2svg, #mus3svg, #mus4svg{
+    height:50px;
+    width: 140px;
+    margin-bottom: 30px;
+}
 
 .hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:first-child:before {
     background-image: url('../img/sidemenu/texture.svg');
+    width: 40px;
+    height: 40px;
 }
-
-.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(2):before {
-    background-image: url('../img/sidemenu/object.svg');
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:first-child{
+    font-size: 30px;
 }
 
 .hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(3):before {
-    background-image: url('../img/sidemenu/howtoplay.svg');
-    height: 90px;
+    background-image: url('../img/sidemenu/object.svg');
+    width: 40px;
+    height: 40px;
 }
 
 .hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(4):before {
-    background-image: url('../img/sidemenu/settings.svg');
+
 }
 
 .hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(5):before {
-    background-image: url('../img/sidemenu/statistics.svg');
+    background-image: url('../img/ljosaperu.svg');
+    width: 25px;
+    height: 40px;
 }
-
 .hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(6):before {
-    background-image: url('../img/sidemenu/timer.svg');
+    display: flex;
 }
-
 .hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li {
     opacity: 0;
     margin-top: 40px
 }
 
-.hero-howtoplay-content-wrapper .sidemenu-howtoplay-keybindings li:first-child:before {
-    background-image: url('../img/sidemenu/mouseclickleft.svg');
-    width: 37px;
-    height: 64px;
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu .keybindingshowto li{
+    opacity: 1;
+    margin-top: 0px;
+    height: 160px;
 }
-
-.hero-howtoplay-content-wrapper .sidemenu-howtoplay-keybindings li:nth-child(2):before {
-    background-image: url('../img/sidemenu/erasecubes.svg');
-    width: 132px;
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu .keybindingshowto li:first-child:before {
+    display: none;
 }
-
-.hero-howtoplay-content-wrapper .sidemenu-howtoplay-keybindings li:nth-child(3):before {
-    background-image: url('../img/sidemenu/changeview.svg');
-    width: 205px;
-    height: 49px;
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu .keybindingshowto li:nth-child(3):before {
+    display: none;
 }
-
-.hero-howtoplay-content-wrapper .sidemenu-howtoplay-keybindings li:nth-child(4):before {
-    background-image: url('../img/sidemenu/zoom.svg');
-    width: 142px;
-    height: 41px;
+.challengehowto{
+    display: flex;
+}
+.challengehowto p{
+    font-size: 22px;
+    width: 30%;
 }
 
 @keyframes display-list {
@@ -487,13 +553,13 @@ canvas {
 
 /* SVG CARPENTER ANIMATION */
 
-#carpenter1 #Sog, #carpenter1 #Hamar, #carpenter1 #Naglar {
+#bobhowtoplay #Sog, #bobhowtoplay #Hamar, #bobhowtoplay #Naglar {
     transform: translate(155px, 100px);
     transition: 1s;
 }
 
 .animation-carpenter #Sog {
-    animation: move-sog .4s .2s forwards;
+    animation: move-sog .4s .4s forwards;
 }
 
 .animation-carpenter #Hamar {
@@ -501,7 +567,7 @@ canvas {
 }
 
 .animation-carpenter #Naglar {
-    animation: move-naglar .4s .6s forwards;
+    animation: move-naglar .4s .4s forwards;
 }
 
 @keyframes move-sog {
@@ -527,7 +593,7 @@ canvas {
         transform: translate(155px, 100px);
     }
     100% {
-        transform: translate(350px, 500px);
+        transform: translate(350px, 400px);
     }
 }
 
@@ -713,19 +779,18 @@ canvas {
 }
 
 .nav::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 .nav::-webkit-scrollbar-thumb {
-  background: #666;
-  border-radius: 20px;
+    background: #666;
+    border-radius: 20px;
 }
 
 .nav::-webkit-scrollbar-track {
-  background: #ddd;
-  border-radius: 20px;
+    background: #ddd;
+    border-radius: 20px;
 }
-
 
 .ingame-sidemenu {
     width: 110px;
@@ -759,12 +824,10 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    padding-top: 30px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     padding-bottom: 30px;
 }
-
-
 
 .ingame-topnav ul li:hover {
     cursor: pointer;
@@ -778,7 +841,6 @@ canvas {
 
 .ingame-topnav ul li svg {
     width: 26%;
-
     height: 30px;
 }
 
@@ -800,38 +862,31 @@ canvas {
 
 .ingame-topnav ul li:nth-child(1) svg g rect {
     transition: .3s ease-in-out;
-
 }
-
-
-
 
 .ingame-topnav ul li:hover svg path {
     fill: #DC8F4B;
 }
 
 .TactiveS rect {
-
     stroke: #DC8F4B;
     fill: transparent;
 }
 
 .activepuls rect {
-  animation: puls 2s infinite ease-in-out;
+    animation: puls 2s infinite ease-in-out;
 }
 
 @keyframes puls {
-
-  0% {
-  stroke: #DC8F4B;
-}
-50% {
-  stroke: #fff;
-}
-100% {
-  stroke: #DC8F4B;
-}
-
+    0% {
+        stroke: #DC8F4B;
+    }
+    50% {
+        stroke: #fff;
+    }
+    100% {
+        stroke: #DC8F4B;
+    }
 }
 
 .TactiveF {
@@ -840,7 +895,7 @@ canvas {
 
 .TactiveS {
     stroke: #DC8F4B;
-    fill:#DC8F4B;
+    fill: #DC8F4B;
 }
 
 .TactiveF {
@@ -864,7 +919,6 @@ canvas {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     justify-content: flex-end;
     height: 100%;
 }
@@ -874,11 +928,17 @@ canvas {
     list-style: none;
 }
 
-
 .icon2 ul li {
     width: 26px;
     height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.icon2 img {
+    width: 60px;
+    padding-bottom: 40px;
 }
 
 .icon1 {
@@ -920,6 +980,8 @@ canvas {
 
 .kassilitur {
     margin-bottom: 20px;
+    min-width: 178px;
+    min-height: 91px;
 }
 
 .colorpikk {
@@ -932,15 +994,32 @@ canvas {
     text-align: center;
     border-radius: 13%;
     transition: 1s;
+    border: 1px solid #fff !important;
+    border-radius: 40px !important;
+    cursor: pointer;
+    position: absolute;
+    top: 120px !important;
+    right: 51px !important;
+    width: 20px !important;
+    height: 20px !important;
+    background-color: red !important;
+}
+
+.btn-floating {
+    background-color: orange;
+}
+
+.textColorChangeInput {
+    color: #fff;
+    text-align: center;
+    font-size: 2em;
 }
 
 .color-picker {
     height: 222px;
-    left: 180px !important;
+    left: 1235px;
+    top: 464px !important;
     width: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .color-picker-control {
@@ -966,6 +1045,13 @@ canvas {
 
 /* Togglað div -howto- */
 
+.ingame-howtoplay-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .howto, .addtexture, .addobject, .settingsdiv {
     flex-direction: column;
     justify-content: flex-start;
@@ -973,7 +1059,8 @@ canvas {
 
 .howto h3, .addtexture h3, .addobject h3, .settingsdiv h3 {
     color: #F2994A;
-    font-weight: 200;
+    font-weight: 500;
+    font-size: 1.92rem;
     letter-spacing: 1px;
     margin: 30px;
     align-content: space-between;
@@ -987,26 +1074,38 @@ canvas {
 
 .howto p {
     color: #FFFFFF;
-    font-size: 15px;
-    font-weight: 100;
+<<<<<<< HEAD
+
+    font-size: 1.5em;
+    font-weight: 300;
     flex-direction: row;
     align-self: flex-start;
-    margin-left: 30px;
-    margin-top: 26px;
+    margin: 26px auto 5px;
+
+=======
+    font-size: 15px;
+    font-weight: 400;
+    flex-direction: row;
+    align-self: flex-start;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+>>>>>>> 0e2508bc0b1e706bfa62c7aebee991ad538a9b24
+
 }
 
 #addcubeimg {
     align-self: flex-start;
-    padding-left: 55px;
+    margin: 10px auto 5px;
 }
 
 .howto .keyb {
-
-    flex-direction: row;
-    width: 180px;
+    margin: 0 auto 10px;
+    text-align: center;
 }
 
 .howto .keys {
+    margin-top: 10px;
     padding: 0px 15px 0px 0px;
 }
 
@@ -1044,84 +1143,99 @@ canvas {
     cursor: pointer;
     opacity: .85;
 }
-.objectsitem ul li{
+
+.objectsitem ul li {
     height: 180px;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     cursor: pointer;
     width: 130px;
 }
+
 .texturizedcubes ul li:nth-child(1) {
-    background-image: url('../img/glasscube.svg');
+    background-image: url('../img/cubes-img/glasscube.svg');
 }
 
 .texturizedcubes ul li:nth-child(2) {
-    background-image: url('../img/grasscube.svg');
+    background-image: url('../img/cubes-img/grasscube.svg');
 }
 
 .texturizedcubes ul li:nth-child(3) {
-    background-image: url('../img/woodprufa2.svg');
+    background-image: url('../img/cubes-img/woodcube.svg');
 }
 
 .texturizedcubes ul li:nth-child(4) {
-    background-image: url('../img/brick4.svg');
+    background-image: url('../img/cubes-img/brickcube.svg');
 }
-.objectsitem ul li:nth-child(1){
-    background-image: url('../img/grindverk.png');
 
+.texturizedcubes ul li:nth-child(5) {
+    background-image: url('../img/cubes-img/concretecube.svg');
 }
-.objectsitem ul li:nth-child(2){
+
+.texturizedcubes ul li:nth-child(6) {
+    background-image: url('../img/cubes-img/seacube.svg');
+}
+
+.texturizedcubes ul li:nth-child(7) {
+    background-image: url('../img/cubes-img/lavacube.svg');
+}
+
+.objectsitem ul li:nth-child(1) {
+    background-image: url('../img/grindverk.png');
+}
+
+.objectsitem ul li:nth-child(2) {
     background-image: url('../img/tre.png');
     background-position: 22% 50%;
 }
-.objectsitem ul li:nth-child(3){
+
+.objectsitem ul li:nth-child(3) {
     background-image: url('../img/streetlight.png');
     background-position: -1% 90%;
-
 }
-.objectsitem ul li:nth-child(4){
+
+.objectsitem ul li:nth-child(4) {
     background-image: url('../img/minicooper.png');
 }
 
-.elements{
+.elements {}
 
-
+.Bob-T {
+    width: 400px;
+    height: 130px;
+    background-color: #66BB6A;
+    position: absolute;
+    z-index: 9999999;
+    top: 45px;
+    right: 0;
+    transition: 1s ease-in-out;
+    right: -140%;
 }
 
 
-.Bob-T{
-  width: 400px;
-   height: 130px;
-   background-color: #66BB6A;
-   position: absolute;
-   z-index: 9999999;
-   top: 45px;
-   right: 0;
-   transition: 1s ease-in-out;
-   right: -140%;
-}
 
-.Bob-MS{
-  background-color: #000;
-  width: 32%;
-  height: 100%;
-  opacity: 0.1;
+
+
+.Bob-MS {
+    background-color: #000;
+    width: 32%;
+    height: 100%;
+    opacity: 0.1;
 
 }
 
-
-.Bob-T img{
-  opacity: 1;
-  width: 60px;
-  top: 11px;
-  position: absolute;
-  margin-left: 32px;
-  transition: 1s ;
+.Bob-T img {
+    opacity: 1;
+    width: 60px;
+    top: 11px;
+    position: absolute;
+    margin-left: 32px;
+    transition: 1s;
 }
-.Bob-text{
-  height: 100%;
 
-  float: right;
+.Bob-text {
+    height: 100%;
+    float: right;
     color: white;
     /* padding-right: 37px; */
     height: 100%;
@@ -1131,8 +1245,19 @@ canvas {
     justify-content: center;
 }
 
-.takkar-Bob{
-  display: flex;
+#bobHeading {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 6px;
+}
+
+#bobParagraph {
+    font-size: 14px;
+}
+
+.takkar-Bob {
+    display: flex;
     justify-content: center;
     top: 100px;
     position: absolute;
@@ -1141,34 +1266,171 @@ canvas {
     width: 100%;
     padding-left: 22px
 }
+
 .takkar-Bob button {
-  background: none;
-   border: none;
-   color: white;
-   /* border-radius: 10%; */
-}
-#bobGotIt{
-           color: white;
-           border-radius: 4px;
-           text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            background: rgb(223, 117, 20);
-            margin-left: 29%;
-}
-#skip-T{
-  margin-left: 31%;
-}
-.welcome1{
-  display: block;
-  min-width: 252.575px;
-
+    background: none;
+    border: none;
+    color: white;
+    /* border-radius: 10%; */
 }
 
-.skref1{
-  display: none;
+#bobGotIt, #bobChallengeSetup, #bobTimeSetup {
+    outline: none;
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(223, 117, 20);
+    margin-left: 29%;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 0.5px;
 }
 
+#bobGotIt:hover, #bobChallengeSetup {
+    opacity: .95;
+}
 
-.HideBob{
-  right: 0%;
-  transition: 1s ease-in-out;
+#skip-T {
+    margin-left: 31%;
+    font-size: 13px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.welcome1 {
+    display: block;
+    min-width: 252.575px;
+}
+
+#welcome2 {
+    display: flex;
+}
+
+#welcome2 h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: -12px;
+}
+
+.skref1 {
+    display: none;
+}
+
+.HideBob {
+    right: 0%;
+    transition: 1s ease-in-out;
+}
+
+/*.cubeinput input {
+    width: 60%;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+}*/
+
+.timeinput input, .cubeinput input {
+        width: 60%;
+        background: none;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid white;
+        height: 23px;
+        margin-top: 18px;
+}
+
+.ingame-challenges {
+    position: absolute;
+    top: 10px;
+    left: 35vw;
+    width: 400px;
+    height: 150px;
+    z-index: 10000000;
+    background-color: #66BB6A;
+    color: #fff;
+    transition: 1s;
+    text-align: center;
+}
+
+.nav::-webkit-scrollbar { 
+    display: none;
+}
+
+#progressBar {
+    stroke: #fff;
+    stroke-width: 10px;
+}
+
+#replay {
+    position: absolute;
+    top: 44%;
+    left: 90px;
+    cursor: pointer;
+    transition: 1s;
+    opacity: 0;
+}
+
+#secondsCounter {
+    position: absolute;
+    top: 35%;
+    left: 87px;
+    cursor: pointer;
+    color: #7DF483;
+    font-size: 1.3em;
+}
+
+.timer-container {
+    position: relative;
+}
+
+#timer {
+    margin-top: -17px;
+    margin-left: 22px;
+}
+
+.challenges_active div div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 150px;
+    width: 348px;
+    float: right;
+}
+
+.challenges_active .timer {
+    width: 60%;
+}
+
+.ingame-challenges div div input, .ingame-challenges div div input:focus {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: #66BB6A;
+    outline: none;
+    font-size: 1.3em;
+    text-align: center;
+    width: 43px;
+}
+
+#cubeCounter {
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0;
+    margin-top: -20px;
+    color: #fff;
+}
+
+.challenges_max_cubes h2, .challenges_time h2 {
+    margin-top: 34px;
+}
+
+#challengeMe {
+    font-size: 1em;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.challengeMe {
+    cursor: pointer;
 }
