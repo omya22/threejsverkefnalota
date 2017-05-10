@@ -992,6 +992,7 @@ canvas {
 
 .howto p {
     color: #FFFFFF;
+<<<<<<< HEAD
 
     font-size: 1.5em;
     font-weight: 300;
@@ -999,6 +1000,15 @@ canvas {
     align-self: flex-start;
     margin: 26px auto 5px;
 
+=======
+    font-size: 15px;
+    font-weight: 400;
+    flex-direction: row;
+    align-self: flex-start;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+>>>>>>> 0e2508bc0b1e706bfa62c7aebee991ad538a9b24
 
 }
 
