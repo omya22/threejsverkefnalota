@@ -405,6 +405,9 @@ canvas {
     background-repeat: no-repeat;
     margin-right: 50px;
 }
+.keybindingshowto ul li:before {
+    display: none;
+}
 .kassihowto, .objecthowto, .keybindingshowto{
     display: flex;
     font-size: 22px;
@@ -454,6 +457,7 @@ canvas {
     width: 30px;
     margin-top: 30px;
     align-self: flex-start;
+    margin-bottom: 20px;
 }
 #mus2svg, #mus3svg, #mus4svg{
     height:50px;
@@ -496,6 +500,7 @@ canvas {
 .hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu .keybindingshowto li{
     opacity: 1;
     margin-top: 0px;
+    height: 160px;
 }
 .hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu .keybindingshowto li:first-child:before {
     display: none;
