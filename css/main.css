@@ -1248,7 +1248,7 @@ canvas {
     font-size: 22px;
     font-weight: 700;
     margin-top: 30px;
-    margin-bottom: 6px;
+    margin-bottom: -12px;
 }
 
 .skref1 {
@@ -1260,12 +1260,22 @@ canvas {
     transition: 1s ease-in-out;
 }
 
-.cubeinput input, .timeinput input {
+/*.cubeinput input {
     width: 60%;
     background: none;
     border: none;
     outline: none;
     border-bottom: 1px solid white;
+}*/
+
+.timeinput input, .cubeinput input {
+        width: 60%;
+        background: none;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid white;
+        height: 23px;
+        margin-top: 18px;
 }
 
 .ingame-challenges {
@@ -1281,9 +1291,13 @@ canvas {
     text-align: center;
 }
 
+.nav::-webkit-scrollbar { 
+    display: none;
+}
+
 #progressBar {
     stroke: #fff;
-    stroke-width: 6px;
+    stroke-width: 10px;
 }
 
 #replay {
@@ -1309,7 +1323,8 @@ canvas {
 }
 
 #timer {
-    margin-top: -23px;
+    margin-top: -17px;
+    margin-left: 22px;
 }
 
 .challenges_active div div {
