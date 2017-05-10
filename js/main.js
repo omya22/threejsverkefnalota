@@ -259,7 +259,7 @@ function changeBob(heading,paragraph) {
   bobParagraph.innerHTML = paragraph;
 }
 
-changeBob("Hi, I'm Bob." , "Welcome to BIULDR, I'll be your guide.");
+changeBob("Hi, I'm Bob." , "Welcome to BUILDR, I'll be your guide.");
 
 $('#bobGotIt').click(function() {
   clicks++;

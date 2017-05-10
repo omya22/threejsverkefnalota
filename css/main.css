@@ -988,11 +988,12 @@ canvas {
 .howto p {
     color: #FFFFFF;
     font-size: 15px;
-    font-weight: 100;
+    font-weight: 400;
     flex-direction: row;
     align-self: flex-start;
-    margin-left: 30px;
-    margin-top: 26px;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 15px;
 }
 
 #addcubeimg {
