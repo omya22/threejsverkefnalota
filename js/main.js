@@ -284,6 +284,12 @@ $('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
       }
 
       else if (clicks==6){
+
+      carpenter.classList.remove("animation-carpenter");
+            HideBob2.className += " HideBob";
+
+        }
+
           $('#bobChallengeSetup').click(function() {
               HideBob2.classList.remove("HideBob");
               console.log(clicks)
@@ -303,7 +309,8 @@ $('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
 
       }
 
-      }
+
+      
 
 
 $('.challengeMe').click(function() {

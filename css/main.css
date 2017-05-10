@@ -1013,11 +1013,13 @@ canvas {
 .howto p {
     color: #FFFFFF;
 <<<<<<< HEAD
+
     font-size: 1.5em;
     font-weight: 300;
     flex-direction: row;
     align-self: flex-start;
     margin: 26px auto 5px;
+
 =======
     font-size: 15px;
     font-weight: 400;
@@ -1026,7 +1028,8 @@ canvas {
     margin-left: 50px;
     margin-top: 50px;
     margin-bottom: 15px;
->>>>>>> 6d6157b39f87a2cd1ebf7d1d114707d95c76bcf9
+>>>>>>> 0e2508bc0b1e706bfa62c7aebee991ad538a9b24
+
 }
 
 #addcubeimg {
@@ -1147,11 +1150,16 @@ canvas {
     right: -140%;
 }
 
+
+
+
+
 .Bob-MS {
     background-color: #000;
     width: 32%;
     height: 100%;
     opacity: 0.1;
+
 }
 
 .Bob-T img {
