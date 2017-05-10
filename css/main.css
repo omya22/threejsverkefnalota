@@ -762,7 +762,7 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    padding-top: 30px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     padding-bottom: 30px;
 }
@@ -918,6 +918,8 @@ canvas {
 
 .kassilitur {
     margin-bottom: 20px;
+    min-width: 178px;
+    min-height: 91px;
 }
 
 .colorpikk {
@@ -930,15 +932,32 @@ canvas {
     text-align: center;
     border-radius: 13%;
     transition: 1s;
+    border: 1px solid #fff !important;
+    border-radius: 40px !important;
+    cursor: pointer;
+    position: absolute;
+    top: 120px !important;
+    right: 51px !important;
+    width: 20px !important;
+    height: 20px !important;
+    background-color: red !important;
+}
+
+.btn-floating {
+    background-color: orange;
+}
+
+.textColorChangeInput {
+    color: #fff;
+    text-align: center;
+    font-size: 2em;
 }
 
 .color-picker {
     height: 222px;
-    left: 180px !important;
+    left: 1235px;
+    top: 464px !important;
     width: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .color-picker-control {
@@ -978,7 +997,8 @@ canvas {
 
 .howto h3, .addtexture h3, .addobject h3, .settingsdiv h3 {
     color: #F2994A;
-    font-weight: 200;
+    font-weight: 500;
+    font-size: 1.92rem;
     letter-spacing: 1px;
     margin: 30px;
     align-content: space-between;

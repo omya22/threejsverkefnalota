@@ -8,7 +8,7 @@
     <meta name="keywords" content="buildr, builder, Bob, cubes, cubegame, threejs, game, world, 3D, 3Dcubes, rotate, rotation">
     <link rel="icon" sizes="16x16" href="https://images.vexels.com/media/users/3/137615/isolated/preview/5af2a9cbd8cd93aa90889fbc05656cb5-geometric-abstract-logo-cube-by-vexels.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <link href="css/color-picker.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/threejs.css">
@@ -349,6 +349,11 @@
     </section>
 
     <section class="threejs-playground" id="playground">
+        <div class="fixed-action-btn">
+          <a class="btn-floating btn-large">
+            <img src="img/bucket.svg" alt="">
+          </a>
+        </div>
         <div class="ingame-sidemenu">
                     <div class="sidemenu-logo">
                         <svg width="100" height="100" viewBox="0 0 129 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
@@ -379,7 +384,7 @@
                     <div class="ingame-topnav">
 
                         <ul>
-                            <li class="sidemenuLi texture" id="texturepuls">
+                            <li class="sidemenuLi texture tooltipped" data-position="right" data-delay="50" data-tooltip="Change texture" id="texturepuls">
                                 <svg class="sidemenu-hover" id="texture" width="50px" height="50px" viewBox="0 0 25 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
                                     <desc>Created with Sketch.</desc>
@@ -395,7 +400,7 @@
                                     </g>
                                 </svg>
                             </li>
-                            <li class="sidemenuLi hamar">
+                            <li class="sidemenuLi hamar tooltipped" data-position="right" data-delay="50" data-tooltip="Change object">
                                 <svg class="sidemenu-hover" id="hamarsnua" width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
                                     <desc>Created with Sketch.</desc>
@@ -408,7 +413,7 @@
                                 </svg>
                             </li>
 
-                            <li class="sidemenuLi Lightbulb">
+                            <li class="sidemenuLi Lightbulb tooltipped" data-position="right" data-delay="50" data-tooltip="How to play">
                                 <svg class="sidemenu-hover" width="39px" height="61px" viewBox="0 0 39 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
                                     <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
@@ -421,7 +426,7 @@
                                     </g>
                                 </svg>
                             </li>
-                            <li class="sidemenuLi settings">
+                            <li class="sidemenuLi settings tooltipped" data-position="right" data-delay="50" data-tooltip="Settings">
                                 <svg class="sidemenu-hover" id="settingssnu" width="90px" height="90px" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
                                     <desc>Created with Sketch.</desc>
@@ -449,7 +454,7 @@
                 </div>
                 <div class="nav addtexture">
                     <h3>Customize cube</h3>
-                        <svg class="kassilitur"width="91px" height="102px" viewBox="0 0 91 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <svg class="kassilitur" id="colorCube" width="91px" height="102px" viewBox="0 0 91 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
                             <desc>Created with Sketch.</desc>
                             <defs></defs>
@@ -462,7 +467,7 @@
                             </g>
                         </svg>
                         <div class="skiptaumlit">
-                    <input class="colorpikk" type="text" value="#fff" />
+                    <input class="textColorChangeInput" value="#fff" type="text" placeholder="#000000" />
                 </div>
 
                 <div class="texturizedcubes">
@@ -630,6 +635,7 @@
         </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
     <script src="js/color-picker.min.js"></script>
     <script type="text/javascript" src="js/orbitcontrols.js"></script>

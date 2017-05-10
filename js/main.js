@@ -110,7 +110,33 @@ backArrow.addEventListener("click", function() {
 // INGAME JS
 //Búa til IF-- then hér..
 
-var picker = new CP(document.querySelector('.colorpikk'));
+$('.textColorChangeInput').change(function() {
+    changeTexture('../img/textures/originaltexture.jpg')
+
+    console.log($(this).val().slice(0,1))
+
+    if ($(this).val().slice(0,1) == "#") {
+        console.log('0x' + ($(".textColorChangeInput").val().slice(1,7)))
+        cubeMaterial.color.setHex('0x' + ($(".textColorChangeInput").val().slice(1,7)));
+
+        $(".kassilitur").css("fill", "#" + $(".textColorChangeInput").val().slice(1,7));
+        $(".kassilitur1").css("opacity", ".9");
+        $(".kassilitur2").css("opacity", ".95");
+        $(".kassilitur3").css("opacity", "1");
+    } else {
+            cubeMaterial.color.setHex('0x' + ($(".textColorChangeInput").val()));
+
+            $(".kassilitur").css("fill", "#" + $(".textColorChangeInput").val());
+            $(".kassilitur1").css("opacity", ".9");
+            $(".kassilitur2").css("opacity", ".95");
+            $(".kassilitur3").css("opacity", "1");
+    }
+
+
+
+})
+
+var picker = new CP(document.querySelector('.btn-floating'));
 
 $(".colorpikk").click(function() {
     changeTexture('../img/textures/originaltexture.jpg')
@@ -118,15 +144,18 @@ $(".colorpikk").click(function() {
 });
 
   picker.on("change", function(color) {
-      this.target.value = '0x' + color;
-      cubeMaterial.color.setHex(($(".colorpikk").val()));
+      console.log(color);
+      $(".textColorChangeInput").val('0x' +color);
+      cubeMaterial.color.setHex($(".textColorChangeInput").val());
 
-      this.target.value = '#' + color;
+      $(".textColorChangeInput").val('#' + color);
 
       $(".kassilitur").css("fill", "#" + color);
       $(".kassilitur1").css("opacity", ".9");
       $(".kassilitur2").css("opacity", ".95");
       $(".kassilitur3").css("opacity", "1");
+
+      $('.btn-floating').css('background-color', '#' +color);
 
   });
 
