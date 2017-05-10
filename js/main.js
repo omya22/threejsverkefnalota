@@ -48,7 +48,7 @@ play.addEventListener("click", function() {
 let howToPlay = document.getElementById('howToPlay');
 let howToPlayLeft = document.getElementById('howToPlayLeft')
 let howToPlayRight = document.getElementById('howToPlayRight')
-let carpenter = document.getElementById('carpenter1');
+let carpenter = document.getElementById('bobhowtoplay');
 
 howToPlayList.addEventListener("click", function() {
     welcomeLeft.style.bottom = "-100%";
@@ -255,10 +255,48 @@ $('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
       }
 
       else if (clicks==6){
-// HideBob2.classList.add("HideBob");
-        }
+          $('#bobChallengeSetup').click(function() {
+              HideBob2.classList.remove("HideBob");
+              console.log(clicks)
+
+              setTimeout(function() {
+                $('.cubeinput').css('display', 'block');
+                $('.timeinput').css('display', 'none');
+                }, 400)
+
+              setTimeout(function() {
+                  HideBob2.className += " HideBob"
+                  $('#bobChallengeSetup').toggleClass("challenges_go");
+              }, 500)
+
+
+          })
 
       }
+
+      }
+
+
+$('.challengeMe').click(function() {
+    $('.Bob-T').removeClass('HideBob');
+
+    setTimeout(function() {
+        changeBob("Challenges", "You wanna challenge?");
+        buttontrue.innerHTML = "Yes";
+        buttongamefalse.innerHTML = "No Thanks";
+        buttongamefalse.style.marginLeft = "3%";
+        $('#bobGotIt').click(function() {
+            $('#Bob-T2').css("right", "-100%")
+            HideBob2.className += " HideBob";
+        })
+
+    }, 100);
+
+    setTimeout(function() {
+        $('#Bob-T2').toggleClass('HideBob');
+    }, 500)
+})
+
 
 
 function changeBob(heading,paragraph) {
@@ -277,29 +315,48 @@ $('#bobGotIt').click(function() {
   }, 1000)
 })
 
+$('#bobTimeSetup').click(function() {
+    $('#Bob-T3').toggleClass('HideBob');
+    $('#Bob-T4').toggleClass('HideBob');
+
+
+})
+
 $('#skip-T').click(function(){
 
   $('.Bob-T').toggleClass('HideBob');
 })
 
-//
-//
-//
-//  CHALLENGES
-//
-//
-//
-
 $('.challenges_go').click(function() {
+    let seconds = parseInt($('.challenge_time_input').val());
+    let cubeCounterValue = document.getElementById('cubeCounter')
 
-    if ($('.challenge_max_input').val() === "") {
-        $('#cubeCounter').toggleClass("up");
-        $('#cubeCounter').html(0);
+    if ($('.challenge_time_input').val() === "") {
+        alert("tomt input!!")
+    } else {
+        setInterval(function secondTimer() {
+            console.log(seconds)
+            seconds--;
+            if (seconds === -1) {
+                alert("timinn er búinn!!");
+            }
+        }, 1000)
     }
 
-    $('#cubeCounter').html(parseInt($('.challenge_max_input').val()));
-    cubeCounter = parseInt($('.challenge_max_input').val());
-    $('.ingame-challenges').css('top', '-100%');
+    if ($('.challenge_max_input').val() === "" || $('.challenge_max_input').val() === "0") {
+        $('#cubeCounter').toggleClass("up");
+        cubeCounterValue.innerHTML = 0;
+    } else {
+        $('#cubeCounter').html(parseInt($('.challenge_max_input').val()));
+        cubeCounter = parseInt($('.challenge_max_input').val());
+    }
+
+    $('#Bob-T4').toggleClass('HideBob');
+
+    setTimeout(() => {
+        $('.challenges_active').toggleClass('HideBob');
+    }, 500)
+
 
     setTimeout(function() {
         $('.challenges_setup').css("display", "none");
@@ -317,6 +374,15 @@ $('.challenges_go').click(function() {
     return cubeCounter;
 
 })
+
+//
+//
+//
+//  CHALLENGES
+//
+//
+//
+
 
 // setInterval(function() {
 //     console.log(cubeCounter);

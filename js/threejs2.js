@@ -174,11 +174,13 @@ function onDocumentMouseDown(event) {
             if ($('body').hasClass('ingame')) {
                 if ($('#cubeCounter').hasClass("up")) {
                     cubeCounter++;
+                    console.log(parseInt(cubeCounter))
+                    $('#cubeCounter').html(cubeCounter);
                 } else {
                     cubeCounter--;
-                }
-                if (cubeCounter === 0) {
-                    alert("Done!");
+                    if (cubeCounter === 0) {
+                        alert("Done!");
+                    }
                 }
                 $('#cubeCounter').html(cubeCounter);
                 let voxel = new THREE.Mesh(cubeGeo, cubeMaterial.clone());
