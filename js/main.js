@@ -6,6 +6,7 @@ let welcomeLeft = document.getElementById('welcomeLeft');
 let welcomeRight = document.getElementById('welcomeRight');
 let backArrow = document.getElementById('arrow');
 let HideBob = document.getElementById('Bob-T2');
+let HideBob2 = document.getElementById('Bob-T3');
 let canvas = document.getElementById("ourCanvas")
 
 let threeJSPlayground = document.getElementById('playground');
@@ -47,7 +48,7 @@ play.addEventListener("click", function() {
 let howToPlay = document.getElementById('howToPlay');
 let howToPlayLeft = document.getElementById('howToPlayLeft')
 let howToPlayRight = document.getElementById('howToPlayRight')
-let carpenter = document.getElementById('carpenter1');
+let carpenter = document.getElementById('bobhowtoplay');
 
 howToPlayList.addEventListener("click", function() {
     welcomeLeft.style.bottom = "-100%";
@@ -247,41 +248,84 @@ $('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
         buttongamefalse.innerHTML = "No Thanks";
         buttongamefalse.style.marginLeft = "3%";
         $('#bobGotIt').click(function() {
-            $('.ingame-challenges').css("top", "10px");
-            $('.Bob-T').css("right", "-100%")
+            $('#Bob-T2').css("right", "-100%")
+            HideBob2.className += " HideBob";
         })
 
       }
-    }
+
+      else if (clicks==6){
+          $('#bobChallengeSetup').click(function() {
+              HideBob2.classList.remove("HideBob");
+              console.log(clicks)
+
+              setTimeout(function() {
+                $('.cubeinput').css('display', 'block');
+                $('.timeinput').css('display', 'none');
+                }, 400)
+
+              setTimeout(function() {
+                  HideBob2.className += " HideBob"
+                  $('#bobChallengeSetup').toggleClass("challenges_go");
+              }, 500)
+
+
+          })
+
+      }
+
+      }
+
+
+$('.challengeMe').click(function() {
+    $('.Bob-T').removeClass('HideBob');
+
+    setTimeout(function() {
+        changeBob("Challenges", "You wanna challenge?");
+        buttontrue.innerHTML = "Yes";
+        buttongamefalse.innerHTML = "No Thanks";
+        buttongamefalse.style.marginLeft = "3%";
+        $('#bobGotIt').click(function() {
+            $('#Bob-T2').css("right", "-100%")
+            HideBob2.className += " HideBob";
+        })
+
+    }, 100);
+
+    setTimeout(function() {
+        $('#Bob-T2').toggleClass('HideBob');
+    }, 500)
+})
+
+
 
 function changeBob(heading,paragraph) {
   bobHeading.innerHTML = heading;
   bobParagraph.innerHTML = paragraph;
 }
 
-changeBob("Hi, I'm Bob." , "Welcome to BIULDR, I'll be your guide.");
+changeBob("Hi, I'm Bob." , "Welcome to BUILDR, I'll be your guide.");
 
 $('#bobGotIt').click(function() {
   clicks++;
-  $('.Bob-T').toggleClass('HideBob');
+  $('#Bob-T2').toggleClass('HideBob');
   setTimeout(function() {
     gotIt();
-    $('.Bob-T').toggleClass('HideBob');
+    $('#Bob-T2').toggleClass('HideBob');
   }, 1000)
+})
+
+$('#bobTimeSetup').click(function() {
+    $('#Bob-T3').toggleClass('HideBob');
+    $('#Bob-T4').toggleClass('HideBob');
+
+
 })
 
 $('#skip-T').click(function(){
 
   $('.Bob-T').toggleClass('HideBob');
 })
-
-//
-//
-//
-//  CHALLENGES
-//
-//
-//
 
 $('.challenges_go').click(function() {
     let seconds = parseInt($('.challenge_time_input').val());
@@ -307,7 +351,12 @@ $('.challenges_go').click(function() {
         cubeCounter = parseInt($('.challenge_max_input').val());
     }
 
-    $('.ingame-challenges').css('top', '-100%');
+    $('#Bob-T4').toggleClass('HideBob');
+
+    setTimeout(() => {
+        $('.challenges_active').toggleClass('HideBob');
+    }, 500)
+
 
     setTimeout(function() {
         $('.challenges_setup').css("display", "none");
@@ -325,6 +374,15 @@ $('.challenges_go').click(function() {
     return cubeCounter;
 
 })
+
+//
+//
+//
+//  CHALLENGES
+//
+//
+//
+
 
 // setInterval(function() {
 //     console.log(cubeCounter);
