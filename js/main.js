@@ -6,6 +6,7 @@ let welcomeLeft = document.getElementById('welcomeLeft');
 let welcomeRight = document.getElementById('welcomeRight');
 let backArrow = document.getElementById('arrow');
 let HideBob = document.getElementById('Bob-T2');
+let HideBob2 = document.getElementById('Bob-T3');
 let canvas = document.getElementById("ourCanvas")
 
 let threeJSPlayground = document.getElementById('playground');
@@ -247,12 +248,18 @@ $('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
         buttongamefalse.innerHTML = "No Thanks";
         buttongamefalse.style.marginLeft = "3%";
         $('#bobGotIt').click(function() {
-            $('.ingame-challenges').css("top", "10px");
-            $('.Bob-T').css("right", "-100%")
+            $('#Bob-T2').css("right", "-100%")
+            HideBob2.className += " HideBob";
         })
 
       }
-    }
+
+      else if (clicks==6){
+// HideBob2.classList.add("HideBob");
+        }
+
+      }
+
 
 function changeBob(heading,paragraph) {
   bobHeading.innerHTML = heading;
@@ -263,10 +270,10 @@ changeBob("Hi, I'm Bob." , "Welcome to BUILDR, I'll be your guide.");
 
 $('#bobGotIt').click(function() {
   clicks++;
-  $('.Bob-T').toggleClass('HideBob');
+  $('#Bob-T2').toggleClass('HideBob');
   setTimeout(function() {
     gotIt();
-    $('.Bob-T').toggleClass('HideBob');
+    $('#Bob-T2').toggleClass('HideBob');
   }, 1000)
 })
 
