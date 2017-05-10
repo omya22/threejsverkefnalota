@@ -316,8 +316,12 @@ canvas {
     top: -100%;
 }
 
+.hero-howtoplay-content-wrapper h3 {
+    font-size: .8em;
+}
+
 .hero-howtoplay svg, .hero-aboutus svg {
-    margin-top: 15%;
+    margin-top: 8%;
 }
 
 .hero-howtoplay h2, .hero-aboutus h2 {
@@ -366,7 +370,7 @@ canvas {
 }
 
 .hero-howtoplay-content-wrapper {
-    margin-top: 14%;
+    margin-top: 6%;
     width: 60%;
     display: flex;
     justify-content: flex-start;
@@ -487,13 +491,13 @@ canvas {
 
 /* SVG CARPENTER ANIMATION */
 
-#carpenter1 #Sog, #carpenter1 #Hamar, #carpenter1 #Naglar {
+#bobhowtoplay #Sog, #bobhowtoplay #Hamar, #bobhowtoplay #Naglar {
     transform: translate(155px, 100px);
     transition: 1s;
 }
 
 .animation-carpenter #Sog {
-    animation: move-sog .4s .2s forwards;
+    animation: move-sog .4s .4s forwards;
 }
 
 .animation-carpenter #Hamar {
@@ -501,7 +505,7 @@ canvas {
 }
 
 .animation-carpenter #Naglar {
-    animation: move-naglar .4s .6s forwards;
+    animation: move-naglar .4s .4s forwards;
 }
 
 @keyframes move-sog {
@@ -527,7 +531,7 @@ canvas {
         transform: translate(155px, 100px);
     }
     100% {
-        transform: translate(350px, 500px);
+        transform: translate(350px, 400px);
     }
 }
 
@@ -713,19 +717,18 @@ canvas {
 }
 
 .nav::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 .nav::-webkit-scrollbar-thumb {
-  background: #666;
-  border-radius: 20px;
+    background: #666;
+    border-radius: 20px;
 }
 
 .nav::-webkit-scrollbar-track {
-  background: #ddd;
-  border-radius: 20px;
+    background: #ddd;
+    border-radius: 20px;
 }
-
 
 .ingame-sidemenu {
     width: 110px;
@@ -764,8 +767,6 @@ canvas {
     padding-bottom: 30px;
 }
 
-
-
 .ingame-topnav ul li:hover {
     cursor: pointer;
 }
@@ -778,7 +779,6 @@ canvas {
 
 .ingame-topnav ul li svg {
     width: 26%;
-
     height: 30px;
 }
 
@@ -800,38 +800,31 @@ canvas {
 
 .ingame-topnav ul li:nth-child(1) svg g rect {
     transition: .3s ease-in-out;
-
 }
-
-
-
 
 .ingame-topnav ul li:hover svg path {
     fill: #DC8F4B;
 }
 
 .TactiveS rect {
-
     stroke: #DC8F4B;
     fill: transparent;
 }
 
 .activepuls rect {
-  animation: puls 2s infinite ease-in-out;
+    animation: puls 2s infinite ease-in-out;
 }
 
 @keyframes puls {
-
-  0% {
-  stroke: #DC8F4B;
-}
-50% {
-  stroke: #fff;
-}
-100% {
-  stroke: #DC8F4B;
-}
-
+    0% {
+        stroke: #DC8F4B;
+    }
+    50% {
+        stroke: #fff;
+    }
+    100% {
+        stroke: #DC8F4B;
+    }
 }
 
 .TactiveF {
@@ -840,7 +833,7 @@ canvas {
 
 .TactiveS {
     stroke: #DC8F4B;
-    fill:#DC8F4B;
+    fill: #DC8F4B;
 }
 
 .TactiveF {
@@ -864,7 +857,6 @@ canvas {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     justify-content: flex-end;
     height: 100%;
 }
@@ -874,19 +866,17 @@ canvas {
     list-style: none;
 }
 
-
 .icon2 ul li {
     width: 26px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-.icon2 img{
-width: 60px;
-padding-bottom: 40px;
+.icon2 img {
+    width: 60px;
+    padding-bottom: 40px;
 }
 
 .icon1 {
@@ -974,6 +964,13 @@ padding-bottom: 40px;
 
 /* Togglað div -howto- */
 
+.ingame-howtoplay-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .howto, .addtexture, .addobject, .settingsdiv {
     flex-direction: column;
     justify-content: flex-start;
@@ -995,26 +992,28 @@ padding-bottom: 40px;
 
 .howto p {
     color: #FFFFFF;
-    font-size: 15px;
-    font-weight: 100;
+
+    font-size: 1.5em;
+    font-weight: 300;
     flex-direction: row;
     align-self: flex-start;
-    margin-left: 30px;
-    margin-top: 26px;
+    margin: 26px auto 5px;
+
+
 }
 
 #addcubeimg {
     align-self: flex-start;
-    padding-left: 55px;
+    margin: 10px auto 5px;
 }
 
 .howto .keyb {
-
-    flex-direction: row;
-    width: 180px;
+    margin: 0 auto 10px;
+    text-align: center;
 }
 
 .howto .keys {
+    margin-top: 10px;
     padding: 0px 15px 0px 0px;
 }
 
@@ -1052,13 +1051,15 @@ padding-bottom: 40px;
     cursor: pointer;
     opacity: .85;
 }
-.objectsitem ul li{
+
+.objectsitem ul li {
     height: 180px;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     cursor: pointer;
     width: 130px;
 }
+
 .texturizedcubes ul li:nth-child(1) {
     background-image: url('../img/cubes-img/glasscube.svg');
 }
@@ -1074,74 +1075,75 @@ padding-bottom: 40px;
 .texturizedcubes ul li:nth-child(4) {
     background-image: url('../img/cubes-img/brickcube.svg');
 }
+
 .texturizedcubes ul li:nth-child(5) {
     background-image: url('../img/cubes-img/concretecube.svg');
 }
+
 .texturizedcubes ul li:nth-child(6) {
     background-image: url('../img/cubes-img/seacube.svg');
 }
+
 .texturizedcubes ul li:nth-child(7) {
     background-image: url('../img/cubes-img/lavacube.svg');
 }
-.objectsitem ul li:nth-child(1){
-    background-image: url('../img/grindverk.png');
 
+.objectsitem ul li:nth-child(1) {
+    background-image: url('../img/grindverk.png');
 }
-.objectsitem ul li:nth-child(2){
+
+.objectsitem ul li:nth-child(2) {
     background-image: url('../img/tre.png');
     background-position: 22% 50%;
 }
-.objectsitem ul li:nth-child(3){
+
+.objectsitem ul li:nth-child(3) {
     background-image: url('../img/streetlight.png');
     background-position: -1% 90%;
-
 }
-.objectsitem ul li:nth-child(4){
+
+.objectsitem ul li:nth-child(4) {
     background-image: url('../img/minicooper.png');
 }
 
-.elements{
+.elements {}
 
-
-}
-
-
-.Bob-T{
-  width: 400px;
-   height: 130px;
-   background-color: #66BB6A;
-   position: absolute;
-   z-index: 9999999;
-   top: 45px;
-   right: 0;
-   transition: 1s ease-in-out;
-   right: -140%;
+.Bob-T {
+    width: 400px;
+    height: 130px;
+    background-color: #66BB6A;
+    position: absolute;
+    z-index: 9999999;
+    top: 45px;
+    right: 0;
+    transition: 1s ease-in-out;
+    right: -140%;
 }
 
 
 
 
-.Bob-MS{
-  background-color: #000;
-  width: 32%;
-  height: 100%;
-  opacity: 0.1;
+
+.Bob-MS {
+    background-color: #000;
+    width: 32%;
+    height: 100%;
+    opacity: 0.1;
 
 }
 
-
-.Bob-T img{
-  opacity: 1;
-  width: 60px;
-  top: 11px;
-  position: absolute;
-  margin-left: 32px;
-  transition: 1s ;
+.Bob-T img {
+    opacity: 1;
+    width: 60px;
+    top: 11px;
+    position: absolute;
+    margin-left: 32px;
+    transition: 1s;
 }
-.Bob-text{
-  height: 100%;
 
-  float: right;
+.Bob-text {
+    height: 100%;
+    float: right;
     color: white;
     /* padding-right: 37px; */
     height: 100%;
@@ -1151,20 +1153,19 @@ padding-bottom: 40px;
     justify-content: center;
 }
 
-
-#bobHeading{
-font-size: 22px;
-      font-weight: 700;
-      margin-top: 30px;
-      margin-bottom: 6px;
-
-}
-#bobParagraph{
-  font-size: 14px;
+#bobHeading {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 6px;
 }
 
-.takkar-Bob{
-  display: flex;
+#bobParagraph {
+    font-size: 14px;
+}
+
+.takkar-Bob {
+    display: flex;
     justify-content: center;
     top: 100px;
     position: absolute;
@@ -1173,69 +1174,73 @@ font-size: 22px;
     width: 100%;
     padding-left: 22px
 }
+
 .takkar-Bob button {
-  background: none;
-   border: none;
-   color: white;
-   /* border-radius: 10%; */
+    background: none;
+    border: none;
+    color: white;
+    /* border-radius: 10%; */
 }
-#bobGotIt{
-           color: white;
-           border-radius: 4px;
-           text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            background: rgb(223, 117, 20);
-            margin-left: 29%;
-            font-weight: 900;
+
+#bobGotIt, #bobChallengeSetup, #bobTimeSetup {
+    outline: none;
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(223, 117, 20);
+    margin-left: 29%;
+    font-weight: 900;
     font-size: 14px;
     letter-spacing: 0.5px;
 }
-#skip-T{
-  margin-left: 31%;
-  font-size: 13px;
+
+#bobGotIt:hover, #bobChallengeSetup {
+    opacity: .95;
+}
+
+#skip-T {
+    margin-left: 31%;
+    font-size: 13px;
     font-weight: 400;
     color: #ffffff;
 }
-.welcome1{
-  display: block;
-  min-width: 252.575px;
 
+.welcome1 {
+    display: block;
+    min-width: 252.575px;
 }
+
 #welcome2 {
-  display: flex;
-
+    display: flex;
 }
 
-#welcome2 input{
-  width: 60%;
-  background: none;
-  border: 1px solid white;
-
-
-}
-#welcome2 h2{
-
-font-size: 22px;
-      font-weight: 700;
-      margin-top: 30px;
-      margin-bottom: 6px;
+#welcome2 h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 6px;
 }
 
-
-
-.skref1{
-  display: none;
+.skref1 {
+    display: none;
 }
 
-
-.HideBob{
-  right: 0%;
-  transition: 1s ease-in-out;
+.HideBob {
+    right: 0%;
+    transition: 1s ease-in-out;
 }
 
+.cubeinput input, .timeinput input {
+    width: 60%;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+}
 
 .ingame-challenges {
     position: absolute;
-    top: -100;
+    top: 10px;
     left: 35vw;
     width: 400px;
     height: 150px;
@@ -1247,7 +1252,7 @@ font-size: 22px;
 }
 
 #progressBar {
-    stroke: #7DF483;
+    stroke: #fff;
     stroke-width: 6px;
 }
 
@@ -1280,9 +1285,14 @@ font-size: 22px;
 .challenges_active div div {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: flex-start;
     height: 150px;
+    width: 348px;
+    float: right;
+}
+
+.challenges_active .timer {
+    width: 60%;
 }
 
 .ingame-challenges div div input, .ingame-challenges div div input:focus {
@@ -1295,17 +1305,12 @@ font-size: 22px;
     width: 43px;
 }
 
-.challenges_go {
-    position: absolute;
-    bottom: 10px;
-    left: 180px;
-    color: #fff;
-}
-
 #cubeCounter {
-    font-size: 3.5em;
+    font-size: 3em;
     font-weight: 700;
     margin: 0;
+    margin-top: -20px;
+    color: #fff;
 }
 
 .challenges_max_cubes h2, .challenges_time h2 {
@@ -1316,5 +1321,9 @@ font-size: 22px;
     font-size: 1em;
     color: #fff;
     font-weight: 700;
+    cursor: pointer;
+}
+
+.challengeMe {
     cursor: pointer;
 }
