@@ -363,15 +363,21 @@ canvas {
 .hero-howtoplay-content p, .hero-aboutus-content p {
     width: 50%;
     margin: 0 auto;
+    line-height: 1.2;
 }
 
 .hero-howtoplay-content {
     justify-content: flex-start;
 }
+.hero-howtoplay-content-wrapper h3{
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.2;
+}
 
 .hero-howtoplay-content-wrapper {
     margin-top: 6%;
-    width: 60%;
+    width: 80%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -382,7 +388,6 @@ canvas {
     margin-top: 14%;
     list-style: none;
     font-weight: 300;
-    margin-left: 60px;
 }
 
 .hero-howtoplay-content-wrapper ul li {
@@ -400,58 +405,110 @@ canvas {
     background-repeat: no-repeat;
     margin-right: 50px;
 }
+.kassihowto, .objecthowto, .keybindingshowto{
+    display: flex;
+    font-size: 22px;
+}
+.kassihoto img{
+    padding-right: 20%;
+}
+.objecthowto p{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-right: 20px;
+}
+.objecthoto img{
+    height: 50px;
+    width: 50px;
+    padding-left: 20px;
+}
+.keybindingshowto{
+    flex-direction: row;
+    width: 50%;
+}
+.keybindingshowto ul{
+    margin-top: 0px;
+}
+.keybindingsright{
+    width: 50%;
+    align-self: flex-start;
+}
+.keybindingsright p{
+    font-size: 22px;
+    width: 70%;
+}
+.keybindingsright img{
+    margin-top: 80px;
+}
+.keybindingshowto ul li p, .keybindingsright ul li p{
+    font-size: 22px;
+    width: 100%;
+}
+.keybindingshowto ul li{
+    flex-direction: column;
+    margin: 0px;
+    height: 140px;
+}
+.keybindingshowto ul li img{
+    height: 50px;
+    width: 30px;
+    margin-top: 30px;
+    align-self: flex-start;
+}
+#mus2svg, #mus3svg, #mus4svg{
+    height:50px;
+    width: 140px;
+    margin-bottom: 30px;
+}
 
 .hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:first-child:before {
     background-image: url('../img/sidemenu/texture.svg');
+    width: 40px;
+    height: 40px;
 }
-
-.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(2):before {
-    background-image: url('../img/sidemenu/object.svg');
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:first-child{
+    font-size: 30px;
 }
 
 .hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(3):before {
-    background-image: url('../img/sidemenu/howtoplay.svg');
-    height: 90px;
+    background-image: url('../img/sidemenu/object.svg');
+    width: 40px;
+    height: 40px;
 }
 
 .hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(4):before {
-    background-image: url('../img/sidemenu/settings.svg');
+
 }
 
 .hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(5):before {
-    background-image: url('../img/sidemenu/statistics.svg');
+    background-image: url('../img/ljosaperu.svg');
+    width: 25px;
+    height: 40px;
 }
-
 .hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li:nth-child(6):before {
-    background-image: url('../img/sidemenu/timer.svg');
+    display: flex;
 }
-
 .hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu li {
     opacity: 0;
     margin-top: 40px
 }
 
-.hero-howtoplay-content-wrapper .sidemenu-howtoplay-keybindings li:first-child:before {
-    background-image: url('../img/sidemenu/mouseclickleft.svg');
-    width: 37px;
-    height: 64px;
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu .keybindingshowto li{
+    opacity: 1;
+    margin-top: 0px;
 }
-
-.hero-howtoplay-content-wrapper .sidemenu-howtoplay-keybindings li:nth-child(2):before {
-    background-image: url('../img/sidemenu/erasecubes.svg');
-    width: 132px;
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu .keybindingshowto li:first-child:before {
+    display: none;
 }
-
-.hero-howtoplay-content-wrapper .sidemenu-howtoplay-keybindings li:nth-child(3):before {
-    background-image: url('../img/sidemenu/changeview.svg');
-    width: 205px;
-    height: 49px;
+.hero-howtoplay-content-wrapper .sidemenu-howtoplay-sidemenu .keybindingshowto li:nth-child(3):before {
+    display: none;
 }
-
-.hero-howtoplay-content-wrapper .sidemenu-howtoplay-keybindings li:nth-child(4):before {
-    background-image: url('../img/sidemenu/zoom.svg');
-    width: 142px;
-    height: 41px;
+.challengehowto{
+    display: flex;
+}
+.challengehowto p{
+    font-size: 22px;
+    width: 30%;
 }
 
 @keyframes display-list {
