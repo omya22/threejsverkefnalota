@@ -155,9 +155,9 @@ function onDocumentMouseMove(event) {
     render();
 }
 
-$('#bobChallengeSetup').click(function() {
-    
-})
+// $('#bobChallengeSetup').click(function() {
+//     store.getState()
+// })
 
 function onDocumentMouseDown(event) {
     // event.preventDefault();
