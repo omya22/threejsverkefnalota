@@ -255,7 +255,9 @@ $('.addtexture, .settingsdiv, .howto, .addobject').removeClass("left");
       }
 
       else if (clicks==6){
-// HideBob2.classList.add("HideBob");
+      carpenter.classList.remove("animation-carpenter");
+            HideBob2.className += " HideBob";
+
         }
 
       }
